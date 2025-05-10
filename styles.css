@@ -1,71 +1,239 @@
-/* Basic styles */
-:root{
-    --main-color:#ed8f1c;
-    --black:#13131a;
-    --bg:#010103;
-    
-
+:root {
+    --main-color: #ed8f1c;
+    --black: #13131a;
+    --bg: #010103;
 }
-*{
-    margin: 2px; padding: -2px;
+
+* {
+    padding: 0;
+    margin: 0; 
+    margin: 1px;
     box-sizing: border-box;
-    outline: none; border: none;
+    outline: none;
+    border: none;
     text-decoration: none;
     text-transform: capitalize;
-    transition: all 0.2s linear; 
-    
+    transition: all 0.2s linear;
+    overflow-x: hidden;
 }
 
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color:white;
     background-color: azure;
+    overflow-x:hidden;
 }
-.header{
-    position: fixed;
-    top:0; left:0;  right:0;
-    z-index:1000;
+
+.header {
     display: flex;
     align-items: center;
-    justify-content:space-between;
-    padding:6px;
-    background: #3d3333;
-    
+    justify-content: space-between;
+    padding: 20px;
+    background: brown;
 
 }
-.header .navbar a{
-    font-size: 1.2rem;
 
-    margin:0 1rem;
-    color:white;
-
-}
-.header .navbar a:hover{
-    color: var(--main-color);
-    
-
-}
-.header .icons i{
-    height:2.2rem ;
-    width:2.5rem ;
-    line-height:4.2rem;
-    margin-left:.2rem;
-    cursor: pointer;
-    font-size:1.8rem;
-    color:white;
-    text-align: center;
-    
-}
-.header .icons i:hover{
-    color:var(--main-color);
-}
-h1{
+.navbar a {
+    text-decoration: none;
+    font-size: 1rem;
     color: white;
 }
 
+.navbar a:hover {
+    color: var(--main-color);
+}
+
+.items {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.icons i {
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+}
+
+.icons {
+    display: flex;
+    gap: 10px;
     
+}
+
+.icons i:hover {
+    color: var(--main-color);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.navbar.active {
+    left: 3px;
+    transition: 0.4s linear;
+    display: flex;
+    gap: 8px;
+    position: absolute;
+    top: 30px;
+}
+
+@media (max-width: 927px) {
+    .ecommerce {
+        align-items: center;
+    }
+}
+
+@media (max-width: 410px) {
+    .navbar {
+        position: absolute;
+        right: 13px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+
+    .shopingcart {
+        position: fixed;
+        top: 101px;
+        left: 1311px;
+        border: 3px solid;
+        width: 365px;
+        background-color: white;
+        height: 397px;
+    }
+
+
+    .icons {
+        position: absolute;
+        left: 8px;
+        top: 22px;
+    }
+
+    #clothes .item {
+        margin-inline-start: 72px;
+    }
+
+}
+
+h1 {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar a {
+        margin: 5px 0;
+    }
+
+    .icons {
+        order: -1;
+         
+        margin-bottom: 10px;
+    } 
+
+     .shopingcart {
+        width: 100%;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    .container {
+        /* margin-top: 10px; */
+        justify-content: center; /* Keep the stars centered */
+        overflow: hidden;
+    }
+} 
+
+ @media (max-width: 480px) {
+    .header h1 {
+        font-size: 14px;
+    }
+
+    .navbar a {
+        font-size: 9px;
+    }
+
+    .icons i {
+        font-size: 12px;
+        overflow: hidden;
+    }
+    
+
+    .shopingcart {
+        width: 40%;
+        font-size: 09px;
+    }
+
+    .header {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 28px;
+    }
+
+    .navbar a {
+        margin: 3px 0;
+    }
+
+    .icons {
+        order: -1;
+        overflow: hidden;
+        
+        left: 23px;
+        position: absolute;
+        top: 23px;
+        
+    }
+
+    .shopingcart {
+        width: 100%;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    .container i {
+        font-size: 1.2rem;
+        overflow: hidden;
+    }
+}  
+
+ 
+@media (min-width: 1200px) {
+    .header {
+        padding: 20px 40px;
+    }
+
+    .navbar a {
+        font-size: 18px;
+    }
+
+    .icons i {
+        font-size: 24px;
+        overflow: hidden;
+    }
+} 
+
 
 
 /* Item styles */
@@ -73,13 +241,14 @@ h1{
     display: inline-block;
     margin: 17px;
     text-align: center;
-    border-style: solid ;
-    border-color:black;
-    background-color:white;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
     box-shadow: 9px 10px 3px white;
 
 }
-.item :hover{
+
+.item :hover {
     color: var(--main-color);
 }
 
@@ -97,81 +266,3790 @@ button {
     cursor: pointer;
     border-radius: 5px;
     box-shadow: 9px 5px 5px black;
-    
+
 }
 
 button:hover {
     background-color: #45a049;
-    
-}
-span{
-    color: rgb(142, 30, 240);
+
 }
 
 
-header{
+
+header {
     background-color: antiquewhite
 }
-#menu-btn{
+
+#menu-btn {
     display: none;
 }
-img{
-   
+
+img {
+
     object-fit: fill;
-    object-position:40% 10%;
+    object-position: 40% 10%;
     box-shadow: 3px 5px 5px black;
 }
-p{
+
+.item p {
     color: blue;
 }
-.item{
+
+.item {
     box-shadow: 8px 5px 5px black;
     cursor: pointer;
     transition: all 1.1s;
-    border-color:black;
+    border-color: black;
 }
-.item:hover{
+
+.item:hover {
     transform: scale(1.1);
 }
-footer{
-    background-color: #010103;
-    color: white;
-    font-size: larger;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+footer {
+    background-color: #282c34;
+    color: #ffffff;
+    padding: 40px 20px;
 }
-.pre{
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    border-bottom: 2px solid #ffffff;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #9fd4ff;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #271a1a;
+}
+
+.footer-bottom {
     text-align: center;
-    
+    margin-top: 20px;
+    font-size: 14px;
+    color: #9fd4ff;
 }
-.icons2{
+
+.footer-bottom a {
+    color: #9fd4ff;
+}
+
+.pre {
+    text-align: center;
+
+}
+
+.icons2 {
     text-align: center;
     color: white;
-    
+
 }
-pre1{
+
+pre1 {
     text-align: center;
 }
 
-@media screen and (width: 360px){
-    body{
+@media screen and (width: 360px) {
+    body {
         padding: 9px;
 
     }
 }
-.container{
+
+.container {
     color: orange;
     border-color: #010103;
+    display: flex;
+    justify-content: center; /* Center the stars */
+    gap: 5px; /* Space between stars */
+    overflow: hidden; /* Prevent scrolling */
+    /* padding: 0;
+    margin-top: 8px; */
 }
-.container pre{
+.container i {
+    font-size: 1.5rem; /* Corrected size, now using a dot instead of a comma */
+    color: var(--main-color); /* Ensure your --main-color variable is defined */
+}
+
+pre {
+    color: rgb(12, 0, 0);
+}
+
+.icons2 a {
+    color: white;
+}
+
+.help pre a {
+    color: white;
+}
+
+.originalprice {
+    text-decoration: line-through;
+}
+
+.item1 {
+    width: 100%;
+
+}
+
+.ecommerce {
+    margin-top: 57px;
+}
+
+.cart1 img {
+    height: 53px;
+    position: absolute;
+    top: 52px;
+    left: 25px;
+}
+
+
+.shopingcart {
+    position: fixed;
+    top: 110%;
+    right: 83rem;
+    border: 3px solid;
+    width: 365px;
+    background-color: white;
+    height: 397px;
+}
+
+.shopingcart.active {
+    right: 2rem;
+    transition: .4s linear;
+    top: 89px;
+
+}
+
+.cart2 img {
+    height: 53px;
+    width: 86px;
+    position: absolute;
+    top: 132px;
+    left: 25px;
+}
+
+.cart3 img {
+    height: 53px;
+    width: 85px;
+    position: absolute;
+    top: 204px;
+    left: 25px;
+
+}
+
+.cart1 {
+    margin-top: 3px;
+    padding-top: 10px;
+
+}
+
+.cart2 {
+    margin-top: 3px;
+    padding-top: 10px;
+}
+
+.cart3 {
+    margin-top: 3px;
+    padding-top: 10px;
+}
+
+.cart {
+    color: #010103;
+    background-color: brown;
+    margin-top: 3px;
+    padding-top: 7px;
+}
+
+.cart1 span {
+    position: absolute;
+    right: 44%;
+    top: 89px;
+    font-size: 11px;
+}
+
+.cart1 p {
+    position: absolute;
+    top: 68px;
+    right: 47%;
+
+}
+
+.cart2 p {
+    position: absolute;
+    top: 144px;
+    right: 121px;
+
+}
+
+.cart2 span {
+    position: absolute;
+    top: 164px;
+    right: 149px;
+    font-size: 11px;
+
+}
+
+.cart3 p {
+    position: absolute;
+    top: 210px;
+    right: 165px;
+
+}
+
+.cart3 span {
+    position: absolute;
+    right: 149px;
+    top: 230px;
+    font-size: 11px;
+
+}
+
+.cart1 i {
+    position: absolute;
+    right: 15px;
+    top: 73px;
+}
+
+.cart2 i {
+    position: absolute;
+    right: 15px;
+    top: 145px;
+}
+
+.cart3 i {
+    position: absolute;
+    right: 15px;
+    top: 217px;
+}
+
+.shopingcart i:hover {
+    color: var(--main-color);
+}
+
+.totalcart {
+    font-size: larger;
+    position: absolute;
+    top: 273px;
+    right: 4px;
+}
+
+.btn button {
+    position: absolute;
+    top: 325px;
+    right: 5px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 9px 5px 5px black;
+    width: 347px;
+
+}
+
+.btn button:hover {
+    color: var(--main-color);
+}
+
+.cart i {
+    position: absolute;
+    right: 13px;
+    top: 1px;
+    font-size: 28px;
+    overflow: hidden;
+}
+
+.cart i:hover {
+    color: var(--main-color);
+}
+
+.loginform {
+    border: 3px solid black;
+    width: 22rem;
+    position: absolute;
+    top: 110%;
+    right: 83rem;
+    box-shadow: var(--black);
+    padding: 1rem;
+    border-radius: .5rem;
+    background: white;
+    text-align: center;
+}
+
+.loginform.active {
+    right: 2rem;
+    transition: .4s linear;
+    top: 70px;
+
+}
+
+
+.loginform h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
     color: black;
 }
-pre{
-    color: white;
+
+.loginform .box {
+    margin: .7rem 0;
+    background-color: #eee;
+    border-radius: .5rem;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #010103;
+    text-transform: none;
+    width: 100%;
 }
-.icons2 a{
-    color: white;
+
+.loginform .box {
+    margin: .7rem 0;
+    background-color: #eee;
+    border-radius: .5rem;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #010103;
+    text-transform: none;
+    width: 100%;
 }
-.help pre a{
+
+
+.loginform p {
+    font-size: .8rem;
+    padding: .5rem 0;
+
+}
+
+.loginform .btn {
+    background-color: #4CAF50;
     color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 9px 5px 5px black;
+    width: 182px;
+
+
+}
+
+.seperation {
+    height: 7px;
+    background-color: rgb(46, 44, 44);
+    position: relative;
+    z-index: 20;
+
+
+}
+
+.food1 {
+    position: absolute;
+    top: 91px;
+    background: wheat;
+    height: 410px;
+    width: 550px;
+    left: -674px;
+
+
+}
+
+#chicken {
+    display: none;
+}
+
+.food1.active {
+    left: 138px;
+    transition: .4s linear;
+
+}
+
+.food1 img {
+
+    width: 260px;
+    height: 238px;
+    object-fit: cover;
+    top: 5px;
+    position: absolute;
+    left: 156px;
+}
+
+.food1 pre {
+    color: black;
+    position: absolute;
+    top: 287px;
+    font-size: 33px;
+    left: 06px;
+}
+
+.food1 p {
+    color: black;
+    position: absolute;
+    top: 327px;
+    font-size: 24px;
+    left: 16px;
+    font-family: "Gilroy_Bold";
+}
+
+
+
+.food1 button {
+    position: absolute;
+    top: 292px;
+    font-size: 23px;
+    left: 392px;
+    width: 118px;
+
+}
+
+.food1 button:hover {
+    color: var(--main-color);
+}
+
+.food1 i {
+
+    position: absolute;
+    right: 32px;
+    /* Adjust for better placement */
+    top: 10px;
+    color: rgb(40, 44, 63);
+    font-size: 24px;
+    /* Adjust font size */
+    cursor: pointer;
+    /* Add pointer for interactivity */
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    padding: 7px;
+    /* Add padding for better appearance */
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 6px 0px;
+}
+
+.food1 .p {
+    position: absolute;
+    top: 362px;
+    padding-inline: 45px;
+    left: -35px;
+    font-family: "Gilroy";
+}
+
+.food1 iframe {
+    height: 22px;
+    width: 22px;
+    top: 262px;
+    left: 14px;
+    position: absolute
+}
+
+.food2 iframe {
+    height: 22px;
+    width: 22px;
+    top: 262px;
+    left: 14px;
+    position: absolute
+}
+
+.food2 {
+    position: absolute;
+    top: 91px;
+    background: wheat;
+    height: 410px;
+    width: 550px;
+    left: -674px;
+
+
+}
+
+.food2.active {
+    left: 138px;
+    transition: .4s linear;
+
+}
+
+.food2 img {
+
+    width: 260px;
+    height: 238px;
+    object-fit: cover;
+    top: 5px;
+    position: absolute;
+    left: 156px;
+}
+
+.food2 pre {
+    color: black;
+    position: absolute;
+    top: 282px;
+    font-size: 33px;
+    left: 06px;
+}
+
+.food2 p {
+    color: black;
+    position: absolute;
+    top: 321px;
+    font-size: 24px;
+    left: 16px;
+    font-family: "Gilroy_Bold";
+}
+
+
+
+.food2 button {
+    position: absolute;
+    top: 292px;
+    font-size: 23px;
+    left: 392px;
+    width: 118px;
+
+}
+
+.food2 button:hover {
+    color: var(--main-color);
+}
+
+.food2 i {
+    position: absolute;
+    right: 32px;
+    /* Adjust for better placement */
+    top: 10px;
+    color: rgb(40, 44, 63);
+    font-size: 24px;
+    /* Adjust font size */
+    cursor: pointer;
+    /* Add pointer for interactivity */
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    padding: 7px;
+    /* Add padding for better appearance */
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 6px 0px;
+}
+
+.food2 .p {
+    position: absolute;
+    top: 350px;
+    padding-inline: 48px;
+    left: -38px;
+    font-family: "Gilroy";
+}
+
+#Burger {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #Burger {
+        padding: 10px;
+    }
+
+
+    #Burger img {
+        width: 260px;
+        height: 238px;
+
+    }
+
+    #Burger .p {
+        font-size: 14px;
+    }
+
+    #Burger p {
+        font-size: 16px;
+    }
+
+    #Burger button {
+        font-size: 14px;
+        padding: 8px 15px;
+
+
+
+    }
+}
+
+
+@media (max-width: 650px) {
+    #Burger {
+        max-width: 300px;
+        top: 509px;
+        width: 317px;
+    }
+
+    #Burger .p {
+        font-size: 12px;
+    }
+
+    #Burger pre b {
+        font-size: 16px;
+    }
+
+    #Burger p {
+        font-size: 14px;
+    }
+
+    #Burger button {
+        left: 179px;
+        width: 72px;
+        height: 30px;
+        top: 299px;
+
+    }
+
+    #Burger img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #Burger iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+@media (max-width: 450px) {
+    #Burger {
+        max-width: 300px;
+        top: 410px;
+        width: 317px;
+        left: 36px;
+
+    }
+
+    #Burger .p {
+        font-size: 12px;
+    }
+
+    #Burger pre b {
+        font-size: 16px;
+    }
+
+    #Burger p {
+        font-size: 14px;
+    }
+
+    #Burger button {
+        left: 179px;
+        width: 72px;
+        height: 30px;
+        top: 299px;
+
+    }
+
+    #Burger img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #Burger iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    #chicken {
+        padding: 10px;
+    }
+
+    #chicken img {
+        width: 260px;
+        height: 238px;
+
+    }
+
+    #chicken .p {
+        font-size: 14px;
+    }
+
+    #chicken p {
+        font-size: 16px;
+    }
+
+    #chicken button {
+        font-size: 14px;
+        padding: 8px 15px;
+
+
+
+    }
+}
+
+
+@media (max-width: 650px) {
+    #chicken {
+        max-width: 300px;
+        top: 168px;
+        width: 317px;
+    }
+
+    #chicken .p {
+        font-size: 12px;
+    }
+
+    #chicken pre b {
+        font-size: 16px;
+    }
+
+    #chicken p {
+        font-size: 14px;
+    }
+
+    #chicken button {
+        left: 179px;
+        width: 72px;
+        height: 30px;
+        top: 299px;
+
+    }
+
+    #chicken img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #chicken iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+@media (max-width: 450px) {
+    #chicken {
+        max-width: 300px;
+        top: 196px;
+        width: 317px;
+        left: 36px;
+    }
+
+    #chicken .p {
+        font-size: 12px;
+    }
+
+    #chicken pre b {
+        font-size: 16px;
+    }
+
+    #chicken p {
+        font-size: 14px;
+    }
+
+    #chicken button {
+        left: 179px;
+        width: 72px;
+        height: 30px;
+        top: 299px;
+
+    }
+
+    #chicken img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #chicken iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+.food3 iframe {
+    height: 22px;
+    width: 22px;
+    top: 262px;
+    left: 14px;
+    position: absolute
+}
+
+.food3 {
+    position: absolute;
+    top: 91px;
+    background: wheat;
+    height: 410px;
+    width: 550px;
+    left: -674px;
+
+
+}
+
+.food3.active {
+    left: 138px;
+    transition: .4s linear;
+
+}
+
+.food3 img {
+
+    width: 260px;
+    height: 238px;
+    object-fit: cover;
+    top: 5px;
+    position: absolute;
+    left: 156px;
+}
+
+.food3 pre {
+    color: black;
+    position: absolute;
+    top: 282px;
+    font-size: 33px;
+    left: 06px;
+}
+
+.food3 p {
+    color: black;
+    position: absolute;
+    top: 321px;
+    font-size: 24px;
+    left: 16px;
+    font-family: "Gilroy_Bold";
+}
+
+
+
+.food3 button {
+    position: absolute;
+    top: 292px;
+    font-size: 23px;
+    left: 392px;
+    width: 118px;
+
+}
+
+.food3 button:hover {
+    color: var(--main-color);
+}
+
+.food3 i {
+    position: absolute;
+    right: 32px;
+    /* Adjust for better placement */
+    top: 10px;
+    color: rgb(40, 44, 63);
+    font-size: 24px;
+    /* Adjust font size */
+    cursor: pointer;
+    /* Add pointer for interactivity */
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    padding: 7px;
+    /* Add padding for better appearance */
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 6px 0px;
+}
+
+.food3 .p {
+    position: absolute;
+    top: 350px;
+    padding-inline: 48px;
+    left: -38px;
+    font-family: "Gilroy";
+}
+
+#paneerrice {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #paneerrice {
+        padding: 10px;
+        top: 561px;
+    }
+
+    #paneerrice img {
+        width: 260px;
+        height: 238px;
+
+    }
+
+    #paneerrice .p {
+        font-size: 14px;
+    }
+
+    #paneerrice p {
+        font-size: 16px;
+    }
+
+    #paneerrice button {
+        font-size: 14px;
+        padding: 8px 15px;
+
+
+
+    }
+}
+
+
+@media (max-width: 650px) {
+    #paneerrice {
+        max-width: 300px;
+        top: 872px;
+        width: 317px;
+    }
+
+    #paneerrice .p {
+        font-size: 12px;
+    }
+
+    #paneerrice pre b {
+        font-size: 16px;
+    }
+
+    #paneerrice p {
+        font-size: 14px;
+    }
+
+    #paneerrice button {
+        left: 179px;
+        width: 72px;
+        height: 30px;
+        top: 299px;
+
+    }
+
+    #paneerrice img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #paneerrice iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+@media (max-width: 450px) {
+    #paneerrice {
+        max-width: 300px;
+        top: 756px;
+        width: 317px;
+        left: 36px;
+    }
+
+    #paneerrice .p {
+        font-size: 12px;
+    }
+
+    #paneerrice pre b {
+        font-size: 16px;
+    }
+
+    #paneerrice p {
+        font-size: 14px;
+    }
+
+    #paneerrice button {
+        left: 179px;
+        width: 72px;
+        height: 30px;
+        top: 299px;
+
+    }
+
+    #paneerrice img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #paneerrice iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+
+.food4 iframe {
+    height: 22px;
+    width: 22px;
+    top: 262px;
+    left: 14px;
+    position: absolute
+}
+
+.food4 {
+    position: absolute;
+    top: 91px;
+    background: wheat;
+    height: 410px;
+    width: 550px;
+    left: -674px;
+
+
+}
+
+.food4.active {
+    left: 138px;
+    transition: .4s linear;
+
+}
+
+.food4 img {
+
+    width: 260px;
+    height: 238px;
+    object-fit: cover;
+    top: 5px;
+    position: absolute;
+    left: 156px;
+}
+
+.food4 pre {
+    color: black;
+    position: absolute;
+    top: 282px;
+    font-size: 33px;
+    left: 06px;
+}
+
+.food4 p {
+    color: black;
+    position: absolute;
+    top: 321px;
+    font-size: 24px;
+    left: 16px;
+    font-family: "Gilroy_Bold";
+}
+
+
+
+.food4 button {
+    position: absolute;
+    top: 292px;
+    font-size: 23px;
+    left: 392px;
+    width: 118px;
+
+}
+
+.food4 button:hover {
+    color: var(--main-color);
+}
+
+.food4 i {
+    position: absolute;
+    right: 32px;
+    /* Adjust for better placement */
+    top: 10px;
+    color: rgb(40, 44, 63);
+    font-size: 24px;
+    /* Adjust font size */
+    cursor: pointer;
+    /* Add pointer for interactivity */
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    padding: 7px;
+    /* Add padding for better appearance */
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 6px 0px;
+}
+
+.food4 .p {
+    position: absolute;
+    top: 350px;
+    padding-inline: 48px;
+    left: -38px;
+    font-family: "Gilroy";
+}
+
+#Pizza {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #Pizza {
+        padding: 10px;
+        top: 561px;
+    }
+
+    #Pizza img {
+        width: 260px;
+        height: 238px;
+
+    }
+
+    #Pizza .p {
+        font-size: 14px;
+    }
+
+    #Pizza p {
+        font-size: 16px;
+    }
+
+    #Pizza button {
+        font-size: 14px;
+        padding: 8px 15px;
+
+
+
+    }
+}
+
+
+@media (max-width: 650px) {
+    #Pizza {
+        max-width: 300px;
+        top: 1234px;
+        width: 317px;
+    }
+
+    #Pizza .p {
+        font-size: 12px;
+    }
+
+    #Pizza pre b {
+        font-size: 16px;
+    }
+
+    #Pizza p {
+        font-size: 14px;
+    }
+
+    #Pizza button {
+        left: 179px;
+        width: 72px;
+        height: 30px;
+        top: 299px;
+
+    }
+
+    #Pizza img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #Pizza iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+@media (max-width: 450px) {
+    #Pizza {
+        max-width: 300px;
+        top: 1128px;
+        width: 317px;
+        left: 36px;
+    }
+
+    #Pizza .p {
+        font-size: 12px;
+    }
+
+    #Pizza pre b {
+        font-size: 16px;
+    }
+
+    #Pizza p {
+        font-size: 14px;
+    }
+
+    #Pizza button {
+        left: 179px;
+        width: 72px;
+        height: 30px;
+        top: 299px;
+
+    }
+
+    #Pizza img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #Pizza iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+.food5 iframe {
+    height: 22px;
+    width: 22px;
+    top: 262px;
+    left: 14px;
+    position: absolute
+}
+
+.food5 {
+    position: absolute;
+    top: 412px;
+    background: wheat;
+    height: 410px;
+    width: 550px;
+    left: -674px;
+
+
+}
+
+.food5.active {
+    left: 138px;
+    transition: .4s linear;
+
+}
+
+.food5 img {
+
+    width: 260px;
+    height: 238px;
+    object-fit: cover;
+    top: 5px;
+    position: absolute;
+    left: 156px;
+}
+
+.food5 pre {
+    color: black;
+    position: absolute;
+    top: 282px;
+    font-size: 33px;
+    left: 06px;
+}
+
+.food5 p {
+    color: black;
+    position: absolute;
+    top: 321px;
+    font-size: 24px;
+    left: 16px;
+    font-family: "Gilroy_Bold";
+}
+
+
+
+.food5 button {
+    position: absolute;
+    top: 292px;
+    font-size: 23px;
+    left: 392px;
+    width: 118px;
+
+}
+
+.food5 button:hover {
+    color: var(--main-color);
+}
+
+.food5 i {
+    position: absolute;
+    right: 32px;
+    /* Adjust for better placement */
+    top: 10px;
+    color: rgb(40, 44, 63);
+    font-size: 24px;
+    /* Adjust font size */
+    cursor: pointer;
+    /* Add pointer for interactivity */
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    padding: 7px;
+    /* Add padding for better appearance */
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 6px 0px;
+}
+
+.food5 .p {
+    position: absolute;
+    top: 350px;
+    padding-inline: 48px;
+    left: -38px;
+    font-family: "Gilroy";
+}
+
+#Chowmein {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #Chowmein {
+        padding: 10px;
+        top: 918px;
+    }
+
+    #Chowmein img {
+        width: 260px;
+        height: 238px;
+
+    }
+
+    #Chowmein .p {
+        font-size: 14px;
+    }
+
+    #Chowmein p {
+        font-size: 16px;
+    }
+
+    #Chowmein button {
+        font-size: 14px;
+        padding: 8px 15px;
+
+
+
+    }
+}
+
+
+@media (max-width: 650px) {
+    #Chowmein {
+        max-width: 300px;
+        top: 1612px;
+        width: 317px;
+    }
+
+    #Chowmein .p {
+        font-size: 12px;
+    }
+
+    #Chowmein pre b {
+        font-size: 16px;
+    }
+
+    #Chowmein p {
+        font-size: 14px;
+    }
+
+    #Chowmein button {
+        left: 179px;
+        width: 72px;
+        height: 30px;
+        top: 299px;
+
+    }
+
+    #Chowmein img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #Chowmein iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+@media (max-width: 450px) {
+    #Chowmein {
+        max-width: 300px;
+        top: 1488px;
+        width: 317px;
+        left: 36px;
+    }
+
+    #Chowmein .p {
+        font-size: 12px;
+    }
+
+    #Chowmein pre b {
+        font-size: 16px;
+    }
+
+    #Chowmein p {
+        font-size: 14px;
+    }
+
+    #Chowmein button {
+        left: 179px;
+        width: 72px;
+        height: 30px;
+        top: 299px;
+
+    }
+
+    #Chowmein img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #Chowmein iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+.food6 iframe {
+    height: 22px;
+    width: 22px;
+    top: 262px;
+    left: 14px;
+    position: absolute
+}
+
+.food6 {
+    position: absolute;
+    top: 412px;
+    background: wheat;
+    height: 410px;
+    width: 550px;
+    left: -674px;
+
+
+}
+
+.food6.active {
+    left: 138px;
+    transition: .4s linear;
+
+}
+
+.food6 img {
+
+    width: 260px;
+    height: 238px;
+    object-fit: cover;
+    top: 5px;
+    position: absolute;
+    left: 156px;
+}
+
+.food6 pre {
+    color: black;
+    position: absolute;
+    top: 282px;
+    font-size: 33px;
+    left: 06px;
+}
+
+.food6 p {
+    color: black;
+    position: absolute;
+    top: 321px;
+    font-size: 24px;
+    left: 16px;
+    font-family: "Gilroy_Bold";
+}
+
+
+
+.food6 button {
+    position: absolute;
+    top: 292px;
+    font-size: 23px;
+    left: 392px;
+    width: 118px;
+
+}
+
+.food6 button:hover {
+    color: var(--main-color);
+}
+
+.food6 i {
+    position: absolute;
+    right: 32px;
+    /* Adjust for better placement */
+    top: 10px;
+    color: rgb(40, 44, 63);
+    font-size: 24px;
+    /* Adjust font size */
+    cursor: pointer;
+    /* Add pointer for interactivity */
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    padding: 7px;
+    /* Add padding for better appearance */
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 6px 0px;
+}
+
+.food6 .p {
+    position: absolute;
+    top: 350px;
+    padding-inline: 48px;
+    left: -38px;
+    font-family: "Gilroy";
+}
+
+#Sammosa {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #Sammosa {
+        padding: 10px;
+        top: 918px;
+    }
+
+    #Sammosa img {
+        width: 260px;
+        height: 238px;
+
+    }
+
+    #Sammosa .p {
+        font-size: 14px;
+    }
+
+    #Sammosa p {
+        font-size: 16px;
+    }
+
+    #Sammosa button {
+        font-size: 14px;
+        padding: 8px 15px;
+
+
+
+    }
+}
+
+
+@media (max-width: 650px) {
+    #Sammosa {
+        max-width: 300px;
+        top: 1987px;
+        width: 317px;
+    }
+
+    #Sammosa .p {
+        font-size: 12px;
+    }
+
+    #Sammosa pre b {
+        font-size: 16px;
+    }
+
+    #Sammosa p {
+        font-size: 14px;
+    }
+
+    #Sammosa button {
+        left: 179px;
+        width: 72px;
+        height: 30px;
+        top: 299px;
+
+    }
+
+    #Sammosa img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #Sammosa iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+@media (max-width: 450px) {
+    #Sammosa {
+        max-width: 300px;
+        top: 1848px;
+        width: 317px;
+        left: 36px;
+    }
+
+    #Sammosa .p {
+        font-size: 12px;
+    }
+
+    #Sammosa pre b {
+        font-size: 16px;
+    }
+
+    #Sammosa p {
+        font-size: 14px;
+    }
+
+    #Sammosa button {
+        left: 179px;
+        width: 72px;
+        height: 30px;
+        top: 299px;
+
+    }
+
+    #Sammosa img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #Sammosa iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+.food7 iframe {
+    height: 22px;
+    width: 22px;
+    top: 262px;
+    left: 14px;
+    position: absolute
+}
+
+.food7 {
+    position: absolute;
+    top: 412px;
+    background: wheat;
+    height: 410px;
+    width: 550px;
+    left: -674px;
+
+
+}
+
+.food7.active {
+    left: 138px;
+    transition: .4s linear;
+
+}
+
+.food7 img {
+
+    width: 260px;
+    height: 238px;
+    object-fit: cover;
+    top: 5px;
+    position: absolute;
+    left: 156px;
+}
+
+.food7 pre {
+    color: black;
+    position: absolute;
+    top: 282px;
+    font-size: 33px;
+    left: 06px;
+}
+
+.food7 p {
+    color: black;
+    position: absolute;
+    top: 321px;
+    font-size: 24px;
+    left: 16px;
+    font-family: "Gilroy_Bold";
+}
+
+
+
+.food7 button {
+    position: absolute;
+    top: 292px;
+    font-size: 23px;
+    left: 392px;
+    width: 118px;
+
+}
+
+.food7 button:hover {
+    color: var(--main-color);
+}
+
+.food7 i {
+    position: absolute;
+    right: 32px;
+    /* Adjust for better placement */
+    top: 10px;
+    color: rgb(40, 44, 63);
+    font-size: 24px;
+    /* Adjust font size */
+    cursor: pointer;
+    /* Add pointer for interactivity */
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    padding: 7px;
+    /* Add padding for better appearance */
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 6px 0px;
+}
+
+.food7 .p {
+    position: absolute;
+    top: 350px;
+    padding-inline: 48px;
+    left: -38px;
+    font-family: "Gilroy";
+}
+
+#Dosa {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #Dosa {
+        padding: 10px;
+        top: 1298px;
+    }
+
+    #Dosa img {
+        width: 260px;
+        height: 238px;
+
+    }
+
+    #Dosa .p {
+        font-size: 14px;
+    }
+
+    #Dosa p {
+        font-size: 16px;
+    }
+
+    #Dosa button {
+        font-size: 14px;
+        padding: 8px 15px;
+
+
+
+    }
+}
+
+
+@media (max-width: 650px) {
+    #Dosa {
+        max-width: 300px;
+        top: 2359px;
+        width: 317px;
+    }
+
+    #Dosa .p {
+        font-size: 12px;
+    }
+
+    #Dosa pre b {
+        font-size: 16px;
+    }
+
+    #Dosa p {
+        font-size: 14px;
+    }
+
+    #Dosa button {
+        left: 179px;
+        width: 72px;
+        height: 30px;
+        top: 299px;
+
+    }
+
+    #Dosa img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #Dosa iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+@media (max-width: 450px) {
+    #Dosa {
+        max-width: 300px;
+        top: 2213px;
+        width: 317px;
+        left: 36px;
+    }
+
+    #Dosa .p {
+        font-size: 12px;
+    }
+
+    #Dosa pre b {
+        font-size: 16px;
+    }
+
+    #Dosa p {
+        font-size: 14px;
+    }
+
+    #Dosa button {
+        left: 179px;
+        width: 72px;
+        height: 30px;
+        top: 299px;
+
+    }
+
+    #Dosa img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #Dosa iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+.food8 iframe {
+    height: 22px;
+    width: 22px;
+    top: 262px;
+    left: 14px;
+    position: absolute
+}
+
+.food8 {
+    position: absolute;
+    top: 412px;
+    background: wheat;
+    height: 410px;
+    width: 550px;
+    left: -674px;
+
+
+}
+
+.food8.active {
+    left: 138px;
+    transition: .4s linear;
+
+}
+
+.food8 img {
+
+    width: 260px;
+    height: 238px;
+    object-fit: cover;
+    top: 5px;
+    position: absolute;
+    left: 156px;
+}
+
+.food8 pre {
+    color: black;
+    position: absolute;
+    top: 282px;
+    font-size: 33px;
+    left: 06px;
+}
+
+.food8 p {
+    color: black;
+    position: absolute;
+    top: 321px;
+    font-size: 24px;
+    left: 16px;
+    font-family: "Gilroy_Bold";
+}
+
+
+
+.food8 button {
+    position: absolute;
+    top: 292px;
+    font-size: 23px;
+    left: 392px;
+    width: 118px;
+
+}
+
+.food8 button:hover {
+    color: var(--main-color);
+}
+
+.food8 i {
+    position: absolute;
+    right: 32px;
+    /* Adjust for better placement */
+    top: 10px;
+    color: rgb(40, 44, 63);
+    font-size: 24px;
+    /* Adjust font size */
+    cursor: pointer;
+    /* Add pointer for interactivity */
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    padding: 7px;
+    /* Add padding for better appearance */
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 6px 0px;
+}
+
+.food8 .p {
+    position: absolute;
+    top: 350px;
+    padding-inline: 48px;
+    left: -38px;
+    font-family: "Gilroy";
+}
+
+#Idli {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #Idli {
+        padding: 10px;
+        top: 1298px;
+    }
+
+    #Idli img {
+        width: 260px;
+        height: 238px;
+
+    }
+
+    #Idli .p {
+        font-size: 14px;
+    }
+
+    #Idli p {
+        font-size: 16px;
+    }
+
+    #Idli button {
+        font-size: 14px;
+        padding: 8px 15px;
+
+
+
+    }
+}
+
+
+@media (max-width: 650px) {
+    #Idli {
+        max-width: 300px;
+        top: 2713px;
+        width: 317px;
+    }
+
+    #Idli .p {
+        font-size: 12px;
+    }
+
+    #Idli pre b {
+        font-size: 16px;
+    }
+
+    #Idli p {
+        font-size: 14px;
+    }
+
+    #Idli button {
+        left: 179px;
+        width: 72px;
+        height: 30px;
+        top: 299px;
+
+    }
+
+    #Idli img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #Idli iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+@media (max-width: 450px) {
+    #Idli {
+        max-width: 300px;
+        top: 2568px;
+        width: 317px;
+        left: 36px;
+    }
+
+    #Idli .p {
+        font-size: 12px;
+    }
+
+    #Idli pre b {
+        font-size: 16px;
+    }
+
+    #Idli p {
+        font-size: 14px;
+    }
+
+    #Idli button {
+        left: 179px;
+        width: 72px;
+        height: 30px;
+        top: 299px;
+
+    }
+
+    #Idli img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #Idli iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+
+
+.food9 iframe {
+    height: 22px;
+    width: 22px;
+    top: 262px;
+    left: 14px;
+    position: absolute
+}
+
+.food9 {
+    position: absolute;
+    top: 755px;
+    background: wheat;
+    height: 410px;
+    width: 550px;
+    left: -674px;
+
+
+}
+
+.food9.active {
+    left: 138px;
+    transition: .4s linear;
+
+}
+
+.food9 img {
+
+    width: 260px;
+    height: 238px;
+    object-fit: cover;
+    top: 5px;
+    position: absolute;
+    left: 156px;
+}
+
+.food9 pre {
+    color: black;
+    position: absolute;
+    top: 282px;
+    font-size: 33px;
+    left: 06px;
+}
+
+.food9 p {
+    color: black;
+    position: absolute;
+    top: 321px;
+    font-size: 24px;
+    left: 16px;
+    font-family: "Gilroy_Bold";
+}
+
+
+
+.food9 button {
+    position: absolute;
+    top: 292px;
+    font-size: 23px;
+    left: 392px;
+    width: 118px;
+
+}
+
+.food9 button:hover {
+    color: var(--main-color);
+}
+
+.food9 i {
+    position: absolute;
+    right: 32px;
+    /* Adjust for better placement */
+    top: 10px;
+    color: rgb(40, 44, 63);
+    font-size: 24px;
+    /* Adjust font size */
+    cursor: pointer;
+    /* Add pointer for interactivity */
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    padding: 7px;
+    /* Add padding for better appearance */
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 6px 0px;
+}
+
+.food9 .p {
+    position: absolute;
+    top: 350px;
+    padding-inline: 48px;
+    left: -38px;
+    font-family: "Gilroy";
+}
+
+#Aloopuri {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #Aloopuri {
+        padding: 10px;
+        top: 1654px;
+    }
+
+    #Aloopuri img {
+        width: 260px;
+        height: 238px;
+
+    }
+
+    #Aloopuri .p {
+        font-size: 14px;
+    }
+
+    #Aloopuri p {
+        font-size: 16px;
+    }
+
+    #Aloopuri button {
+        font-size: 14px;
+        padding: 8px 15px;
+
+
+
+    }
+}
+
+
+@media (max-width: 650px) {
+    #Aloopuri {
+        max-width: 300px;
+        top: 3091px;
+        width: 317px;
+    }
+
+    #Aloopuri .p {
+        font-size: 12px;
+    }
+
+    #Aloopuri pre b {
+        font-size: 16px;
+    }
+
+    #Aloopuri p {
+        font-size: 14px;
+    }
+
+    #Aloopuri button {
+        left: 179px;
+        width: 72px;
+        height: 30px;
+        top: 299px;
+
+    }
+
+    #Aloopuri img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #Aloopuri iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+@media (max-width: 450px) {
+    #Aloopuri {
+        max-width: 300px;
+        top: 2927px;
+        width: 317px;
+        left: 36px;
+    }
+
+    #Aloopuri .p {
+        font-size: 12px;
+    }
+
+    #Aloopuri pre b {
+        font-size: 16px;
+    }
+
+    #Aloopuri p {
+        font-size: 14px;
+    }
+
+    #Aloopuri button {
+        left: 179px;
+        width: 72px;
+        height: 30px;
+        top: 299px;
+
+    }
+
+    #Aloopuri img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #Aloopuri iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+/* chilli panner ka name mattar panner likha hai id me */
+
+.food10 iframe {
+    height: 22px;
+    width: 22px;
+    top: 262px;
+    left: 14px;
+    position: absolute
+}
+
+.food10 {
+    position: absolute;
+    top: 755px;
+    background: wheat;
+    height: 410px;
+    width: 550px;
+    left: -674px;
+
+
+}
+
+.food10.active {
+    left: 138px;
+    transition: .4s linear;
+
+}
+
+.food10 img {
+
+    width: 260px;
+    height: 238px;
+    object-fit: cover;
+    top: 5px;
+    position: absolute;
+    left: 156px;
+}
+
+.food10 pre {
+    color: black;
+    position: absolute;
+    top: 282px;
+    font-size: 33px;
+    left: 06px;
+}
+
+.food10 p {
+    color: black;
+    position: absolute;
+    top: 321px;
+    font-size: 24px;
+    left: 16px;
+    font-family: "Gilroy_Bold";
+}
+
+
+
+.food10 button {
+    position: absolute;
+    top: 292px;
+    font-size: 23px;
+    left: 392px;
+    width: 118px;
+
+}
+
+.food10 button:hover {
+    color: var(--main-color);
+}
+
+.food10 i {
+    position: absolute;
+    right: 32px;
+    /* Adjust for better placement */
+    top: 10px;
+    color: rgb(40, 44, 63);
+    font-size: 24px;
+    /* Adjust font size */
+    cursor: pointer;
+    /* Add pointer for interactivity */
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    padding: 7px;
+    /* Add padding for better appearance */
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 6px 0px;
+}
+
+.food10 .p {
+    position: absolute;
+    top: 350px;
+    padding-inline: 48px;
+    left: -38px;
+    font-family: "Gilroy";
+}
+
+#Mattarpanner {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #Mattarpanner {
+        padding: 10px;
+        top: 1654px;
+    }
+
+    #Mattarpanner img {
+        width: 260px;
+        height: 238px;
+
+    }
+
+    #Mattarpanner .p {
+        font-size: 14px;
+    }
+
+    #Mattarpanner p {
+        font-size: 16px;
+    }
+
+    #Mattarpanner button {
+        font-size: 14px;
+        padding: 8px 15px;
+
+
+
+    }
+}
+
+
+@media (max-width: 650px) {
+    #Mattarpanner {
+        max-width: 300px;
+        top: 3467px;
+        width: 317px;
+    }
+
+    #Mattarpanner .p {
+        font-size: 12px;
+    }
+
+    #Mattarpanner pre b {
+        font-size: 16px;
+    }
+
+    #Mattarpanner p {
+        font-size: 14px;
+    }
+
+    #Mattarpanner button {
+        left: 179px;
+        width: 72px;
+        height: 30px;
+        top: 299px;
+
+    }
+
+    #Mattarpanner img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #Mattarpanner iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+@media (max-width: 450px) {
+    #Mattarpanner {
+        max-width: 300px;
+        top: 3291px;
+        width: 317px;
+        left: 36px;
+    }
+
+    #Mattarpanner .p {
+        font-size: 12px;
+    }
+
+    #Mattarpanner pre b {
+        font-size: 16px;
+    }
+
+    #Mattarpanner p {
+        font-size: 14px;
+    }
+
+    #Mattarpanner button {
+        left: 179px;
+        width: 72px;
+        height: 30px;
+        top: 299px;
+
+    }
+
+    #Mattarpanner img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #Mattarpanner iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+/* chilli panner ka name mattar panner likha hai id me */
+.food11 iframe {
+    height: 22px;
+    width: 22px;
+    top: 262px;
+    left: 14px;
+    position: absolute
+}
+
+.food11 {
+    position: absolute;
+    top: 755px;
+    background: wheat;
+    height: 410px;
+    width: 550px;
+    left: -674px;
+
+
+}
+
+.food11.active {
+    left: 138px;
+    transition: .4s linear;
+
+}
+
+.food11 img {
+
+    width: 260px;
+    height: 238px;
+    object-fit: cover;
+    top: 5px;
+    position: absolute;
+    left: 156px;
+}
+
+.food11 pre {
+    color: black;
+    position: absolute;
+    top: 282px;
+    font-size: 33px;
+    left: 06px;
+}
+
+.food11 p {
+    color: black;
+    position: absolute;
+    top: 321px;
+    font-size: 24px;
+    left: 16px;
+    font-family: "Gilroy_Bold";
+}
+
+
+
+.food11 button {
+    position: absolute;
+    top: 292px;
+    font-size: 23px;
+    left: 392px;
+    width: 118px;
+
+}
+
+.food11 button:hover {
+    color: var(--main-color);
+}
+
+.food11 i {
+    position: absolute;
+    right: 32px;
+    /* Adjust for better placement */
+    top: 10px;
+    color: rgb(40, 44, 63);
+    font-size: 24px;
+    /* Adjust font size */
+    cursor: pointer;
+    /* Add pointer for interactivity */
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    padding: 7px;
+    /* Add padding for better appearance */
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 6px 0px;
+}
+
+.food11 .p {
+    position: absolute;
+    top: 350px;
+    padding-inline: 48px;
+    left: -38px;
+    font-family: "Gilroy";
+}
+
+#manchurean {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #manchurean {
+        padding: 10px;
+        top: 2028px;
+    }
+
+    #manchurean img {
+        width: 260px;
+        height: 238px;
+
+    }
+
+    #manchurean .p {
+        font-size: 14px;
+    }
+
+    #manchurean p {
+        font-size: 16px;
+    }
+
+    #manchurean button {
+        font-size: 14px;
+        padding: 8px 15px;
+
+
+
+    }
+}
+
+
+@media (max-width: 650px) {
+    #manchurean {
+        max-width: 300px;
+        top: 3831px;
+        width: 317px;
+    }
+
+    #manchurean .p {
+        font-size: 12px;
+    }
+
+    #manchurean pre b {
+        font-size: 16px;
+    }
+
+    #manchurean p {
+        font-size: 14px;
+    }
+
+    #manchurean button {
+        left: 179px;
+        width: 72px;
+        height: 30px;
+        top: 299px;
+
+    }
+
+    #manchurean img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #manchurean iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+@media (max-width: 450px) {
+    #manchurean {
+        max-width: 300px;
+        top: 3656px;
+        width: 317px;
+        left: 36px;
+    }
+
+    #manchurean .p {
+        font-size: 12px;
+    }
+
+    #manchurean pre b {
+        font-size: 16px;
+    }
+
+    #manchurean p {
+        font-size: 14px;
+    }
+
+    #manchurean button {
+        left: 179px;
+        width: 72px;
+        height: 30px;
+        top: 299px;
+
+    }
+
+    #manchurean img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #manchurean iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+.food12 iframe {
+    height: 22px;
+    width: 22px;
+    top: 262px;
+    left: 14px;
+    position: absolute
+}
+
+.food12 {
+    position: absolute;
+    top: 755px;
+    background: wheat;
+    height: 410px;
+    width: 550px;
+    left: -674px;
+
+
+}
+
+.food12.active {
+    left: 138px;
+    transition: .4s linear;
+
+}
+
+.food12 img {
+
+    width: 260px;
+    height: 238px;
+    object-fit: cover;
+    top: 5px;
+    position: absolute;
+    left: 156px;
+}
+
+.food12 pre {
+    color: black;
+    position: absolute;
+    top: 282px;
+    font-size: 33px;
+    left: 06px;
+}
+
+.food12 p {
+    color: black;
+    position: absolute;
+    top: 321px;
+    font-size: 24px;
+    left: 16px;
+    font-family: "Gilroy_Bold";
+}
+
+
+
+.food12 button {
+    position: absolute;
+    top: 292px;
+    font-size: 23px;
+    left: 392px;
+    width: 118px;
+
+}
+
+.food12 button:hover {
+    color: var(--main-color);
+}
+
+.food12 i {
+    position: absolute;
+    right: 32px;
+    /* Adjust for better placement */
+    top: 10px;
+    color: rgb(40, 44, 63);
+    font-size: 24px;
+    /* Adjust font size */
+    cursor: pointer;
+    /* Add pointer for interactivity */
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    padding: 7px;
+    /* Add padding for better appearance */
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 6px 0px;
+}
+
+.food12 .p {
+    position: absolute;
+    top: 350px;
+    padding-inline: 48px;
+    left: -38px;
+    font-family: "Gilroy";
+}
+
+#vegthali {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #vegthali {
+        padding: 10px;
+        top: 2028px;
+    }
+
+    #vegthali img {
+        width: 260px;
+        height: 238px;
+
+    }
+
+    #vegthali .p {
+        font-size: 14px;
+    }
+
+    #vegthali p {
+        font-size: 16px;
+    }
+
+    #vegthali button {
+        font-size: 14px;
+        padding: 8px 15px;
+
+
+
+    }
+}
+
+
+@media (max-width: 650px) {
+    #vegthali {
+        max-width: 300px;
+        top: 4209px;
+        width: 317px;
+    }
+
+    #vegthali .p {
+        font-size: 12px;
+    }
+
+    #vegthali pre b {
+        font-size: 16px;
+    }
+
+    #vegthali p {
+        font-size: 14px;
+    }
+
+    #vegthali button {
+        left: 179px;
+        width: 72px;
+        height: 30px;
+        top: 299px;
+
+    }
+
+    #vegthali img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #vegthali iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+@media (max-width: 450px) {
+    #vegthali {
+        max-width: 300px;
+        top: 4016px;
+        width: 317px;
+        left: 36px;
+        height: 423px;
+    }
+
+    #vegthali .p {
+        font-size: 12px;
+    }
+
+    #vegthali pre b {
+        font-size: 16px;
+    }
+
+    #vegthali p {
+        font-size: 14px;
+    }
+
+    #vegthali button {
+        left: 204px;
+        width: 72px;
+        height: 30px;
+        top: 311px;
+
+    }
+
+    #vegthali img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #vegthali iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+.food13 iframe {
+    height: 22px;
+    width: 22px;
+    top: 262px;
+    left: 14px;
+    position: absolute
+}
+
+.food13 {
+    position: absolute;
+    top: 755px;
+    background: wheat;
+    height: 410px;
+    width: 550px;
+    left: -674px;
+
+
+}
+
+.food13.active {
+    left: 138px;
+    transition: .4s linear;
+    top: 1159px;
+
+}
+
+.food13 img {
+
+    width: 260px;
+    height: 238px;
+    object-fit: cover;
+    top: 5px;
+    position: absolute;
+    left: 156px;
+}
+
+.food13 pre {
+    color: black;
+    position: absolute;
+    top: 282px;
+    font-size: 33px;
+    left: 06px;
+}
+
+.food13 p {
+    color: black;
+    position: absolute;
+    top: 321px;
+    font-size: 24px;
+    left: 16px;
+    font-family: "Gilroy_Bold";
+}
+
+
+
+.food13 button {
+    position: absolute;
+    top: 292px;
+    font-size: 23px;
+    left: 392px;
+    width: 118px;
+
+}
+
+.food13 button:hover {
+    color: var(--main-color);
+}
+
+.food13 i {
+    position: absolute;
+    right: 32px;
+    /* Adjust for better placement */
+    top: 10px;
+    color: rgb(40, 44, 63);
+    font-size: 24px;
+    /* Adjust font size */
+    cursor: pointer;
+    /* Add pointer for interactivity */
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    padding: 7px;
+    /* Add padding for better appearance */
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 6px 0px;
+}
+
+.food13 .p {
+    position: absolute;
+    top: 350px;
+    padding-inline: 48px;
+    left: -38px;
+    font-family: "Gilroy";
+}
+
+#NonVegthali {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #NonVegthali {
+        padding: 10px;
+        top: 2417px;
+    }
+
+    #NonVegthali img {
+        width: 260px;
+        height: 238px;
+
+    }
+
+    #NonVegthali .p {
+        font-size: 14px;
+    }
+
+    #NonVegthali p {
+        font-size: 16px;
+    }
+
+    #NonVegthali button {
+        font-size: 14px;
+        padding: 8px 15px;
+
+
+
+    }
+}
+
+
+@media (max-width: 650px) {
+    #NonVegthali {
+        max-width: 300px;
+        top: 4576px;
+        width: 317px;
+    }
+
+    #NonVegthali .p {
+        font-size: 12px;
+    }
+
+    #NonVegthali pre b {
+        font-size: 16px;
+    }
+
+    #NonVegthali p {
+        font-size: 14px;
+    }
+
+    #NonVegthali button {
+        left: 179px;
+        width: 72px;
+        height: 30px;
+        top: 299px;
+
+    }
+
+    #NonVegthali img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #NonVegthali iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+@media (max-width: 450px) {
+    #NonVegthali {
+        max-width: 300px;
+        top: 4544px;
+        width: 317px;
+        left: 36px;
+        height: 423px;
+    }
+
+    #NonVegthali .p {
+        font-size: 12px;
+    }
+
+    #NonVegthali pre b {
+        font-size: 16px;
+    }
+
+    #NonVegthali p {
+        font-size: 14px;
+    }
+
+    #NonVegthali button {
+        left: 204px;
+        width: 72px;
+        height: 30px;
+        top: 311px;
+
+    }
+
+    #NonVegthali img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #NonVegthali iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+.food14 iframe {
+    height: 22px;
+    width: 22px;
+    top: 262px;
+    left: 14px;
+    position: absolute
+}
+
+.food14 {
+    position: absolute;
+    top: 755px;
+    background: wheat;
+    height: 410px;
+    width: 550px;
+    left: -674px;
+
+
+}
+
+.food14.active {
+    left: 138px;
+    transition: .4s linear;
+    top: 1159px;
+
+}
+
+.food14 img {
+
+    width: 260px;
+    height: 238px;
+    object-fit: cover;
+    top: 5px;
+    position: absolute;
+    left: 156px;
+}
+
+.food14 pre {
+    color: black;
+    position: absolute;
+    top: 282px;
+    font-size: 33px;
+    left: 06px;
+}
+
+.food14 p {
+    color: black;
+    position: absolute;
+    top: 321px;
+    font-size: 24px;
+    left: 16px;
+    font-family: "Gilroy_Bold";
+}
+
+
+
+.food14 button {
+    position: absolute;
+    top: 292px;
+    font-size: 23px;
+    left: 392px;
+    width: 118px;
+
+}
+
+.food14 button:hover {
+    color: var(--main-color);
+}
+
+.food14 i {
+    position: absolute;
+    right: 32px; /* Adjust for better placement */
+    top: 10px;
+    color: rgb(40, 44, 63);
+    font-size: 24px; /* Adjust font size */
+    cursor: pointer; /* Add pointer for interactivity */
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    padding: 7px; /* Add padding for better appearance */
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 6px 0px;
+}
+
+.food14 .p {
+    position: absolute;
+    top: 350px;
+    padding-inline: 48px;
+    left: -38px;
+    font-family: "Gilroy";
+}
+
+#Pastry {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #Pastry {
+        padding: 10px;
+        top: 2374px;
+    }
+
+    #Pastry img {
+        width: 260px;
+        height: 238px;
+
+    }
+
+    #Pastry .p {
+        font-size: 14px;
+    }
+
+    #Pastry p {
+        font-size: 16px;
+    }
+
+    #Pastry button {
+        font-size: 14px;
+        padding: 8px 15px;
+
+
+
+    }
+}
+
+
+@media (max-width: 650px) {
+    #Pastry {
+        max-width: 300px;
+        top: 4976px;
+        width: 317px;
+    }
+
+    #Pastry .p {
+        font-size: 12px;
+    }
+
+    #Pastry pre b {
+        font-size: 16px;
+    }
+
+    #Pastry p {
+        font-size: 14px;
+    }
+
+    #Pastry button {
+        left: 179px;
+        width: 72px;
+        height: 30px;
+        top: 299px;
+
+    }
+
+    #Pastry img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #Pastry iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+@media (max-width: 450px) {
+    #Pastry {
+        max-width: 300px;
+        top: 4883px;
+        width: 317px;
+        left: 36px;
+        height: 423px;
+    }
+
+    #Pastry .p {
+        font-size: 12px;
+    }
+
+    #Pastry pre b {
+        font-size: 16px;
+    }
+
+    #Pastry p {
+        font-size: 14px;
+    }
+
+    #Pastry button {
+        left: 204px;
+        width: 72px;
+        height: 30px;
+        top: 311px;
+
+    }
+
+    #Pastry img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #Pastry iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+.food15 iframe {
+    height: 22px;
+    width: 22px;
+    top: 262px;
+    left: 14px;
+    position: absolute
+}
+
+.food15 {
+    position: absolute;
+    top: 755px;
+    background: wheat;
+    height: 410px;
+    width: 550px;
+    left: -674px;
+
+
+}
+
+.food15.active {
+    left: 138px;
+    transition: .4s linear;
+    top: 1159px;
+
+}
+
+.food15 img {
+
+    width: 260px;
+    height: 238px;
+    object-fit: cover;
+    top: 5px;
+    position: absolute;
+    left: 156px;
+}
+
+.food15 pre {
+    color: black;
+    position: absolute;
+    top: 282px;
+    font-size: 33px;
+    left: 06px;
+}
+
+.food15 p {
+    color: black;
+    position: absolute;
+    top: 321px;
+    font-size: 24px;
+    left: 16px;
+    font-family: "Gilroy_Bold";
+}
+
+
+
+.food15 button {
+    position: absolute;
+    top: 292px;
+    font-size: 23px;
+    left: 392px;
+    width: 118px;
+
+}
+
+.food15 button:hover {
+    color: var(--main-color);
+}
+
+.food15 i {
+    position: absolute;
+    right: 32px;
+    /* Adjust for better placement */
+    top: 10px;
+    color: rgb(40, 44, 63);
+    font-size: 24px;
+    /* Adjust font size */
+    cursor: pointer;
+    /* Add pointer for interactivity */
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    padding: 7px;
+    /* Add padding for better appearance */
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 6px 0px;
+}
+
+.food15 .p {
+    position: absolute;
+    top: 350px;
+    padding-inline: 48px;
+    left: -38px;
+    font-family: "Gilroy";
+}
+
+#Cake {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #Cake {
+        padding: 10px;
+    }
+
+    #Cake img {
+        width: 260px;
+        height: 238px;
+
+    }
+
+    #Cake .p {
+        font-size: 14px;
+    }
+
+    #Cake p {
+        font-size: 16px;
+    }
+
+    #Cake button {
+        font-size: 14px;
+        padding: 8px 15px;
+
+
+
+    }
+}
+
+
+@media (max-width: 650px) {
+    #Cake {
+        max-width: 300px;
+        top: 5363px;
+        width: 317px;
+    }
+
+    #Cake .p {
+        font-size: 12px;
+    }
+
+    #Cake pre b {
+        font-size: 16px;
+    }
+
+    #Cake p {
+        font-size: 14px;
+    }
+
+    #Cake button {
+        left: 179px;
+        width: 72px;
+        height: 30px;
+        top: 299px;
+
+    }
+
+    #Cake img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #Cake iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+@media (max-width: 450px) {
+    #Cake {
+        max-width: 300px;
+        top: 5167px;
+        width: 317px;
+        left: 36px;
+        height: 423px;
+    }
+
+    #Cake .p {
+        font-size: 12px;
+    }
+
+    #Cake pre b {
+        font-size: 16px;
+    }
+
+    #Cake p {
+        font-size: 14px;
+    }
+
+    #Cake button {
+        left: 204px;
+        width: 72px;
+        height: 30px;
+        top: 311px;
+
+    }
+
+    #Cake img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #Cake iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+.food16 iframe {
+    height: 22px;
+    width: 22px;
+    top: 262px;
+    left: 14px;
+    position: absolute
+}
+
+.food16 {
+    position: absolute;
+    top: 755px;
+    background: wheat;
+    height: 410px;
+    width: 550px;
+    left: -674px;
+
+
+}
+
+.food16.active {
+    left: 138px;
+    transition: .4s linear;
+    top: 1159px;
+
+}
+
+.food16 img {
+
+    width: 260px;
+    height: 238px;
+    object-fit: cover;
+    top: 5px;
+    position: absolute;
+    left: 156px;
+}
+
+.food16 pre {
+    color: black;
+    position: absolute;
+    top: 282px;
+    font-size: 33px;
+    left: 06px;
+}
+
+.food16 p {
+    color: black;
+    position: absolute;
+    top: 321px;
+    font-size: 24px;
+    left: 16px;
+    font-family: "Gilroy_Bold";
+}
+
+
+
+.food16 button {
+    position: absolute;
+    top: 292px;
+    font-size: 23px;
+    left: 392px;
+    width: 118px;
+
+}
+
+.food16 button:hover {
+    color: var(--main-color);
+}
+
+.food16 i {
+    position: absolute;
+    right: 32px; /* Adjust for better placement */
+    top: 10px;
+    color: rgb(40, 44, 63);
+    font-size: 24px; /* Adjust font size */
+    cursor: pointer; /* Add pointer for interactivity */
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    padding: 7px; /* Add padding for better appearance */
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 6px 0px;
+}
+
+.food16 .p {
+    position: absolute;
+    top: 350px;
+    padding-inline: 48px;
+    left: -38px;
+    font-family: "Gilroy";
+}
+
+#Biryani {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #Biryani {
+        padding: 10px;
+        top: 2700px;
+    }
+
+    #Biryani img {
+        width: 260px;
+        height: 238px;
+
+    }
+
+    #Biryani .p {
+        font-size: 14px;
+    }
+
+    #Biryani p {
+        font-size: 16px;
+    }
+
+    #Biryani button {
+        font-size: 14px;
+        padding: 8px 15px;
+
+
+
+    }
+}
+
+
+@media (max-width: 650px) {
+    #Biryani {
+        max-width: 300px;
+        top: 5763px;
+        width: 317px;
+    }
+
+    #Biryani .p {
+        font-size: 12px;
+    }
+
+    #Biryani pre b {
+        font-size: 16px;
+    }
+
+    #Biryani p {
+        font-size: 14px;
+    }
+
+    #Biryani button {
+        left: 179px;
+        width: 72px;
+        height: 30px;
+        top: 299px;
+
+    }
+
+    #Biryani img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #Biryani iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
+}
+
+@media (max-width: 450px) {
+    #Biryani {
+        max-width: 300px;
+        top: 5480px;
+        width: 317px;
+        left: 36px;
+        height: 423px;
+    }
+
+    #Biryani .p {
+        font-size: 12px;
+    }
+
+    #Biryani pre b {
+        font-size: 16px;
+    }
+
+    #Biryani p {
+        font-size: 14px;
+    }
+
+    #Biryani button {
+        left: 204px;
+        width: 72px;
+        height: 30px;
+        top: 311px;
+
+    }
+
+    #Biryani img {
+        width: 260px;
+        height: 238px;
+        left: 3px;
+    }
+
+    #Biryani iframe {
+        height: 21px;
+        width: 24px;
+        position: absolute;
+        top: 271px;
+    }
+
 }
 
