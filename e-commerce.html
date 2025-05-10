@@ -7,9 +7,9 @@
     <title>Online Store</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />">
-    <link rel="stylesheet" href="styles.css">
-    
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styllles.css">
+
 </head>
 
 <body>
@@ -17,807 +17,1138 @@
 
 
     <header class="header">
-        <h1>Welcome to our Online Store</h1>
+        <h1>FitEatsFashion</h1>
         <nav class="navbar">
-            <a href="#food">food items</a>
-            <a href="#health">health items</a>
-            <a href="#clothes">clothes items</a>
+            <a href="#food" onclick="showItems('food')">food items</a>
+            <a href="#health" onclick="showItems('health')">health items</a>
+            <a href="#clothes" onclick="showItems('clothes')">clothes items</a>
         </nav>
         <div class="icons">
             <i class="fa-solid fa-bars" id="menu-btn"></i>
             <i class="fa-solid fa-magnifying-glass" id="search-btn"></i>
             <i class="fa-solid fa-cart-shopping" id="cart-btn"></i>
             <i class="fa-solid fa-user" id="login-btn"></i>
+            <i class="fa-solid fa-taxi" id="search-btn" onclick = "openCab()"></i>
+            
+            
+            
+
 
         </div>
+        <div id="abc" class="shopingcart">
+            <div class="itemofcart">
+                <div class="cart">
+                    <h1>Shoping Cart</h1>
+                    <i id="close-cart" class="fa-solid fa-xmark"></i>
+                </div>
+
+                <div class="cart1">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/cd481a3ad12ed3ac26266c7216c7cfc2"
+                        alt="">
+                    <i class="fa-solid fa-trash"></i>
+                    <p>Burger</p>
+                    <span>₹80|- QTY 1</span>
+                </div>
+                <div class="cart2">
+                    <img src="https://i5.walmartimages.com/asr/00d11b23-b397-494b-972e-0422ce1490d8_1.f66d58d2745038dc057fbcdb6c1983d1.jpeg"
+                        alt="">
+                    <i class="fa-solid fa-trash"></i>
+                    <p>Fish oil 1200mg</p>
+                    <span>₹500|- QTY 1</span>
+
+
+                </div>
+                <div class="cart3">
+                    <img src="https://i.pinimg.com/originals/1c/71/6b/1c716bbef67f16d46adefbcfb2c94c19.jpg" alt="">
+                    <i class="fa-solid fa-trash"></i>
+                    <p>saree</p>
+                    <span>₹345|- QTY 1</span>
+
+                </div>
+                <div class="totalcart">
+                    <p><b>Total: ₹925/-</b></p>
+                </div>
+                <div class="btn">
+                    <button>Check Out</button>
+                </div>
+
+            </div>
+        </div>
+        <form action="#" class="loginform">
+            <input type="hidden" name="access_key" value="c8fbd3d9-73da-47d2-afde-109faeb34219">
+
+            <h3>LOGIN</h3>
+
+
+            <input type="text" placeholder="Your Email" class="box">
+
+            <input type="password" placeholder="Your Password" class="box">
+
+            <p>Forget Your Password <a href="#">Click Here</a></p>
+            <p>Don't Have An Account <a href="#">Create Now</a></p>
+            <input type="submit" value="Login Now" class="btn">
+
+
+
+        </form>
+
+
 
     </header>
 
 
     <!--FOOD ITEM  FOOD ITEM   FOOD ITEM  FOOD ITEM  FOOD ITEM  FOOD ITEM  FOOD ITEM  FOOD ITEMFOOD ITEM  FOOD ITEM  FOOD ITEM  FOOD ITEM  FOOD ITEM  FOOD ITEM  FOOD ITEM-->
     <hr>
-    <div class="ecommerce">
-        <section id="food">
-            <h2>Food Items</h2>
-            <div class="item">
-                <img src="https://wallpaperaccess.com/full/767105.jpg" alt="Food Item 1">
-                <pre><b>chiken</b></pre>
-                <p>₹180</p>
-                <div class="container">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                </div>
-                <div class="product-quantity-button-container">
-                    <div>
-                        <input type="number" placeholder=" Enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                    </div>
-                </div>
 
+    <section id="food" class="items active">
+        <h2>Food Items</h2>
+
+        <div class="item">
+
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/FOOD_CATALOG/IMAGES/CMS/2024/4/30/b8f19f27-6f17-4360-b887-a6ac09e306c1_25d0f4ea-4da3-493d-92cf-a3ae89fc87d3.jpg"
+                alt="Food Item 1">
+            <pre><b>chicken</b></pre>
+            <div class="price1">
+                <span class="price">₹180 </span>
+                <span class="originalprice">240</span>
             </div>
-            <!-- More food items here -->
-            <div class="item">
-                <img src="https://wallpapercave.com/wp/wp1929442.jpg" alt="Food Item 2">
-                <pre><b>Burger</b></pre>
-                <p>₹80</p>
-                <div class="container">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                </div>
-
-                <div class="product-quantity-button-container">
-                    <div>
-                        <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                    </div>
-
-
-                </div>
-
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
             </div>
-            <div class="item">
-                <img src="https://www.thespruceeats.com/thmb/Q0schrGA1TOajpjDjCqLGipqcBA=/5101x3401/filters:fill(auto,1)/GettyImages-639389404-5c450e724cedfd00015b09d5.jpg"
-                    alt="Food Item 3">
-                <pre><b>Paneer Rice</b></pre>
-                <p>₹100</p>
-                <div class="container">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
-
-                </div>
-
-                <div class="product-quantity-button-container">
-                    <div>
-                        <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                    </div>
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder=" Enter Quantity" min="1"> <BUtton id="open-btn">Buy Now
+                    </BUtton>
                 </div>
             </div>
-            <div class="item">
-                <img src="https://2.bp.blogspot.com/-dV1rgtcLXZ8/Tyb6tHeahsI/AAAAAAAADkM/Y6qVQDuHxac/s1600/Best-top-desktop-food-wallpapers-hd-food-wallpaper-food-pictures-image-photo-1.jpg"
-                    alt="Food Item 4">
-                <pre><b>Pizza</b></pre>
-                <p>₹100</p>
-                <div class="container">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                </div>
-                <div class="product-quantity-button-container">
-                    <div>
-                        <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="https://www.fryingpanadventures.com/wp-content/uploads/2020/10/image-137-scaled-e1604152201367.jpeg"
-                    alt="Food Item 5">
-                <pre><b>Chaumeen</b></pre>
-                <p>₹50</p>
-                <div class="container">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                </div>
-                <div class="product-quantity-button-container">
-                    <div>
-                        <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="http://www.zedamagazine.com/wp-content/uploads/2018/06/Indian-Food-Samosa-Dish-HD-Wallpapers.jpg"
-                    alt="Food Item 6">
-                <pre><b>Sammosa</b></pre>
-                <p>₹30</p>
-                <div class="container">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                </div>
-                <div class="product-quantity-button-container">
-                    <div>
-                        <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="https://imgmedia.lbb.in/media/2019/06/5cfab213ea70622992f6c4db_1559933459094.jpg"
-                    alt="Food Item 7">
-                <pre><b>Dosa</b></pre>
-                <p>₹60</p>
-                <div class="container">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
-                    <i class="fa-regular fa-star"></i>
-                </div>    
-                    <div class="product-quantity-button-container">
-                        <div>
-                            <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="https://www.visittnt.com/blog/wp-content/uploads/2017/09/maxresdefault.jpg"
-                        alt="Food Item 8">
-                    <pre><b>Idli</b></pre>
-                    <p>₹70</p>
-                    <div class="container">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
 
-                    </div>
-                    
-                    <div class="product-quantity-button-container">
-                        <div>
-                            <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                        </div>
-                    </div>
+
+        </div>
+        <!-- More food items here -->
+        <div class="item">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/cd481a3ad12ed3ac26266c7216c7cfc2"
+                alt="Food Item 2">
+            <pre><b>Burger</b></pre>
+            <p>₹80</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder="enter Quantity" min="1"> <BUtton id="open-btn2">Buy Now</BUtton>
                 </div>
-                <div class="item">
-                    <img src="https://foodiewish.com/wp-content/uploads/2020/03/Vegetarian-dishes-foodiewish.jpg"
-                        alt="Food Item 9">
-                    <pre><b>Aloo Puri</b></pre>
-                    <p>₹50</p>
-                    <div class="container">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <div class="product-quantity-button-container">
-                        <div>
-                            <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                        </div>
-                    </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="item">
+            <img src="https://www.thespruceeats.com/thmb/Q0schrGA1TOajpjDjCqLGipqcBA=/5101x3401/filters:fill(auto,1)/GettyImages-639389404-5c450e724cedfd00015b09d5.jpg"
+                alt="Food Item 3">
+            <pre><b>Paneer Rice</b></pre>
+            <p>₹100</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            
+
+            </div>
+
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder="enter Quantity" min="1"> <BUtton id="open-btn3">Buy Now</BUtton>
                 </div>
-                <div class="item">
-                    <img src="https://fthmb.tqn.com/dMrWS2PnCM6Q_Nf635TnpB9HT1w=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/Mutter-Paneer-GettyImages-670907161-58d00a633df78c3c4f3b9bb2.jpg"
-                        alt="Food Item 10">
-                    <pre><b>Matar Paneer</b></pre>
-                    <p>₹78</p>
-                    <div class="container">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <div class="product-quantity-button-container">
-                        <div>
-                            <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                        </div>
-                    </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/FOOD_CATALOG/IMAGES/CMS/2024/3/12/0a56e5af-f99d-4727-8973-1e016e4eae8b_5b7c77c4-d91f-4347-bcc4-f163c9ec0fb2.jpg_compressed"
+                alt="Food Item 4">
+            <pre><b>Pizza</b></pre>
+            <p>₹100</p>
+            <div class="container">
+                <i class="fa-solid regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder="enter Quantity" min="1"> <BUtton id="open-btn4">Buy Now</BUtton>
                 </div>
-                <div class="item">
-                    <img src="https://s3.scoopwhoop.com/dan/spicyfood1/5.jpg" alt="Food Item 11">
-                    <pre><b>Manchurean</b></pre>
-                    <p>₹89</p>
-                    <div class="container">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-stroke"></i>
-    
-                    </div>
-                    <div class="product-quantity-button-container">
-                        <div>
-                            <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                        </div>
-                    </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://www.fryingpanadventures.com/wp-content/uploads/2020/10/image-137-scaled-e1604152201367.jpeg"
+                alt="Food Item 5">
+            <pre><b>Chowmein</b></pre>
+            <p>₹70</p>
+            <div class="container">
+                
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder="enter Quantity" min="1"> <BUtton id="open-btn5">Buy Now</BUtton>
                 </div>
-                <div class="item">
-                    <img src="https://pluspng.com/img-png/veg-thali-png-veg-thali-5-roti-dal-rice-salad-veg-chass-1000.png"
-                        alt="Food Item 12">
-                    <pre><b>Veg thali</b></pre>
-                    <p>₹193</p>
-                    <div class="container">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-stroke"></i>
-    
-                    </div>
-                    <div class="product-quantity-button-container">
-                        <div>
-                            <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                        </div>
-                    </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="http://www.zedamagazine.com/wp-content/uploads/2018/06/Indian-Food-Samosa-Dish-HD-Wallpapers.jpg"
+                alt="Food Item 6">
+            <pre><b>Sammosa</b></pre>
+            <p>₹30</p>
+            <div class="container">
+                
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder="enter Quantity" min="1"> <BUtton id="open-btn6">Buy Now</BUtton>
                 </div>
-                <div class="item">
-                    <img src="https://i.ytimg.com/vi/0LDOmjPDBC0/maxresdefault.jpg" alt="Food Item 14">
-                    <pre><b>Non-Veg thali</b></pre>
-                    <p>₹189</p>
-                    <div class="container">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <div class="product-quantity-button-container">
-                        <div>
-                            <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                        </div>
-                    </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://imgmedia.lbb.in/media/2019/06/5cfab213ea70622992f6c4db_1559933459094.jpg"
+                alt="Food Item 7">
+            <pre><b>Dosa</b></pre>
+            <p>₹60</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder="enter Quantity" min="1"> <BUtton id="open-btn7">Buy Now</BUtton>
                 </div>
-                <div class="item">
-                    <img src="https://thenovicechefblog.com/wp-content/uploads/2020/05/Chocolate-Cake-Recipe-8-735x1103.jpeg"
-                        alt="Food Item 15">
-                    <pre><b>Pastry 4 pics</b></pre>
-                    <p>₹120</p>
-                    <div class="container">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-stroke"></i>
-    
-                    </div>
-                    <div class="product-quantity-button-container">
-                        <div>
-                            <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                        </div>
-                    </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://www.visittnt.com/blog/wp-content/uploads/2017/09/maxresdefault.jpg" alt="Food Item 8">
+            <pre><b>Idli</b></pre>
+            <p>₹70</p>
+            <div class="container">
+                
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+
+            </div>
+
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder="enter Quantity" min="1"> <BUtton id="open-btn8">Buy Now</BUtton>
                 </div>
-                <div class="item">
-                    <img src="https://media.gettyimages.com/photos/round-chocolate-cake-isolated-on-white-background-picture-id176853352?b=1&k=6&m=176853352&s=612x612&w=0&h=C8a0DFnXoKI8kjwjSbGamo_yzGtFqzRtI7cdula380E="
-                        alt="Food Item 16">
-                    <pre><b>Cake</b></pre>
-                    <p>₹120</p>
-                    <div class="container">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <div class="product-quantity-button-container">
-                        <div>
-                            <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                        </div>
-                    </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://foodiewish.com/wp-content/uploads/2020/03/Vegetarian-dishes-foodiewish.jpg"
+                alt="Food Item 9">
+            <pre><b>Aloo Puri</b></pre>
+            <p>₹50</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder="enter Quantity" min="1"> <BUtton id="open-btn9">Buy Now</BUtton>
                 </div>
-                <div class="item">
-                    <img src="https://biryanicorner.com.au/images/right.jpg" alt="Food Item 16">
-                    <pre><b>Biryani with 2 leg peice</b></pre>
-                    <p>₹120</p>
-                    <div class="container">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <div class="product-quantity-button-container">
-                        <div>
-                            <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                        </div>
-                    </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/FOOD_CATALOG/IMAGES/CMS/2024/9/23/b18db055-365b-4cfc-b3a0-bdc6815b9f83_78199d75-33d1-4194-984c-e0670455c545.jpg"
+                alt="Food Item 10">
+            <pre><b>Chilli Paneer Dry</b></pre>
+            
+            <p>₹200</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder="enter Quantity" min="1"> <BUtton id="open-btn10">Buy Now</BUtton>
                 </div>
-        </section>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/hnkyzajtcaug2o3izbsq" alt="Food Item 11">
+            <pre><b>Manchurian</b></pre>
+            <p>₹89</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                
+
+            </div>
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder="enter Quantity" min="1"> <BUtton id="open-btn11">Buy Now</BUtton>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/ddcd030588186f069a08763ee7d4bfca"
+                alt="Food Item 12">
+            <pre><b>Desi Ghee Veg Thali</b></pre>
+            <p>₹193</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                
+
+            </div>
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder="enter Quantity" min="1"> <BUtton id="open-btn12">Buy Now</BUtton>
+                </div>
+            </div>
+        </div>
+        
+        <div class="item">
+            <img src="https://i.ytimg.com/vi/0LDOmjPDBC0/maxresdefault.jpg" alt="Food Item 1">
+            <pre><b>Non-Veg thali</b></pre>
+            <p>₹189</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder="enter Quantity" min="1"> <BUtton  id="open-btn13">Buy Now</BUtton>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://thenovicechefblog.com/wp-content/uploads/2020/05/Chocolate-Cake-Recipe-8-735x1103.jpeg"
+                alt="Food Item 14">
+            <pre><b>Pastry 4 pics</b></pre>
+            <p>₹150</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                
+
+            </div>
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder="enter Quantity" min="1"> <BUtton id="open-btn14">Buy Now</BUtton>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://media.gettyimages.com/photos/round-chocolate-cake-isolated-on-white-background-picture-id176853352?b=1&k=6&m=176853352&s=612x612&w=0&h=C8a0DFnXoKI8kjwjSbGamo_yzGtFqzRtI7cdula380E="
+                alt="Food Item 15">
+            <pre><b>Cake</b></pre>
+            <p>₹250</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder="enter Quantity" min="1"> <BUtton id="open-btn15">Buy Now</BUtton>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://biryanicorner.com.au/images/right.jpg" alt="Food Item 16">
+            <pre><b>Biryani with 2 leg peice</b></pre>
+            <p>₹100</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder="enter Quantity" min="1"> <BUtton id="open-btn16">Buy Now</BUtton>
+                </div>
+            </div>
+        </div>
+
         </hr>
-        <!--HEALTH DEPARTMENT  HEALTH DEPARTMENT   HEALTH DEPARTMENT  HEALTH DEPARTMENT  HEALTH DEPARTMENT  HEALTH DEPARTMENT   HEALTH DEPARTMENT  -->
-        <section id="health">
-            <p>
-            <h2>Health Items</h2>
-            </p>
-            <hr>
-            <div class="item">
-                <img src="https://pureworks.com.my/assets/images/health-care-product-packaging-design-page.jpg"
-                    alt="Health Item 1">
-                <pre><b>Organic Protein Powder 875G</b> </pre>
-                <p>₹350</p>
-                <div class="container">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                </div>
-                <div class="product-quantity-button-container">
-                    <div>
-                        <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="https://dcassetcdn.com/design_img/3842816/947293/24211941/2m5p079hz1mm7p3h0snp0rwry0_image.jpg"
-                    alt="Health Item 2">
-                <pre> <b>Medi-tri Hand Sanitizer 236mil</b></pre>
-                <p>₹220</p>
-                <div class="container">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                </div>
-                <div class="product-quantity-button-container">
-                    <div>
-                        <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="https://site.ambercity.com/images/mabis/caliber-nurse-stethoscope-adult-boxed-black-10-424-020-lr.jpg"
-                    alt="Health Item 3">
-                <pre><b>Stethoscope</b></pre>
-                <p>₹450</p>
-                <div class="container">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                </div>
-                <div class="product-quantity-button-container">
-                    <div>
-                        <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="https://ph-test-11.slatic.net//1b8150e1b41c7c0e94f095229d6e173e.jpg" alt="Health Item 4">
-                <pre><b>Omron Blood pressure machine</b></pre>
-                <p>₹470</p>
-                <div class="container">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                </div>
-                <div class="product-quantity-button-container">
-                    <div>
-                        <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="https://res.cloudinary.com/walmart-labs/image/upload/w_960,dpr_auto,f_auto,q_auto:best/gr/images/product-images/img_large/00750138549521L.jpg"
-                    alt="Health Item 5">
-                <pre>Paracetamol 500mg</pre>
-                <p>₹310</p>
-                <div class="container">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
-                    <i class="fa-regular fa-star"></i>
-                </div>   
-                <div class="product-quantity-button-container">
-                    <div>
-                        <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="https://www.rxstars.net/wp-content/uploads/2015/03/Amlopres-5-mg-880x320.jpg"
-                    alt="Health Item 6">
-                <pre><b>Amlopres-5-mg-880x320</b></pre>
-                <p>₹360</p>
-                <div class="container">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
-                    <i class="fa-regular fa-star"></i>
-                </div>   
-                <div class="product-quantity-button-container">
-                    <div>
-                        <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="https://5.imimg.com/data5/SELLER/Default/2023/6/313317975/KC/IG/AQ/156133026/thriveco-hair-serum-2-0-1000x1000.jpg"
-                    alt="Health Item 7">
-                <pre><b>Hair Growth Serum unisex,30ml</b></pre>
-                <p>₹670</p>
-                <div class="container">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
+        <div class="seperation"></div>
 
-                </div>
-                <div class="product-quantity-button-container">
-                    <div>
-                        <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="https://5.imimg.com/data5/SELLER/Default/2021/6/BV/JP/UY/2529238/honitus-cough-syrup.jpg"
-                    alt="Health Item 8">
-                <pre><b>Dabur caugh syrup 100ml</b></pre>
-                <p>₹350</p>
-                <div class="container">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
+        <div id="chicken" class="food1">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/FOOD_CATALOG/IMAGES/CMS/2024/4/30/b8f19f27-6f17-4360-b887-a6ac09e306c1_25d0f4ea-4da3-493d-92cf-a3ae89fc87d3.jpg"
+                alt="Food Item 1">
+            <pre><b>chicken</b></pre>
+            
 
-                </div>
-                <div class="product-quantity-button-container">
-                    <div>
-                        <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="https://s3.images-iherb.com/sim/sim50003/y/1.jpg" alt="Health Item 9">
-                <pre><b>cough & fever releif 40 tablet</b></pre>
-                <p>₹350</p>
-                <div class="container">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                </div>
-                <div class="product-quantity-button-container">
-                    <div>
-                        <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="https://i5.walmartimages.com/asr/00d11b23-b397-494b-972e-0422ce1490d8_1.f66d58d2745038dc057fbcdb6c1983d1.jpeg"
-                    alt="Health Item 10">
-                <pre><b>fish oil 1200mg</b></pre>
-                <p>₹500</p>
-                <div class="container">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                </div>
-                <div class="product-quantity-button-container">
-                    <div>
-                        <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="https://herbabox.co.uk/wp-content/uploads/2020/04/herbalife-aloe-vera-concentrate-juice-max-473ml.jpg"
-                    alt="Health Item 11">
-                <pre><b>Herbal Alovera concentrate</b></pre>
-                <p>₹265</p>
-                <div class="container">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
+            <i id="close-buy" class="fa-solid fa-xmark"></i>
+            <div class="p">A flavorful and aromatic blend of tender chicken in a rich, flavorful sauce that is sure to
+                satisfy your taste buds.</div>
+            <p>₹180</p>
 
-                </div>
-                <div class="product-quantity-button-container">
-                    <div>
-                        <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                    </div>
-                </div>
-            </div>
+            <button>proceed</button>
 
-            <div class="item">
-                <img src="https://i.pinimg.com/originals/bc/ea/76/bcea76d07970b8e03ce93578e5cb443d.jpg"
-                    alt="Health Item 12">
-                <pre><b>joint pain,migran and
-    sore muscle caplets 500mg</b></pre>
-                <p>₹500</p>
-                <div class="container">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
+        </div>
+        <div id="Burger" class="food2">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/cd481a3ad12ed3ac26266c7216c7cfc2"
+                alt="Food Item 2">
+            <pre><b>Burger</b></pre>
+            <iframe src="https://www.pngitem.com/pimgs/m/151-1515150_veg-icon-png-circle-transparent-png.png" id="yui_3_5_1_1_1733555026393_688" frameborder="0"></iframe>
 
-                </div>
-                <div class="product-quantity-button-container">
-                    <div>
-                        <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
-                    </div>
-                </div>
-            </div>
-    </div>
-    <!-- More health items here -->
+            <i id="close-buy2" class="fa-solid fa-xmark"></i>
+            <div class="p">A veggie burger is a delicious and satisfying alternative to traditional potato-based burgers, 
+                offering a flavorful and nutritious option for vegetarians, vegans.</div>
+            <p>₹80</p>
+            
+
+            <button>proceed</button>
+
+        </div>
+        <div id="paneerrice" class="food3">
+            <img src="https://www.thespruceeats.com/thmb/Q0schrGA1TOajpjDjCqLGipqcBA=/5101x3401/filters:fill(auto,1)/GettyImages-639389404-5c450e724cedfd00015b09d5.jpg"
+                alt="Food Item 3">
+            <pre><b>Paneer Rice</b></pre>
+            <iframe src="https://www.pngitem.com/pimgs/m/151-1515150_veg-icon-png-circle-transparent-png.png" id="yui_3_5_1_1_1733555026393_688" frameborder="0"></iframe>
+
+            <i id="close-buy3" class="fa-solid fa-xmark"></i>
+            <div class="p">A delicious buttery tomato cashew gravy with Paneer cubes served with jeera rice.</div>
+            <p>₹100</p>
+            
+
+            <button>proceed</button>
+
+        </div>
+        <div id="Pizza" class="food4">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/FOOD_CATALOG/IMAGES/CMS/2024/3/12/0a56e5af-f99d-4727-8973-1e016e4eae8b_5b7c77c4-d91f-4347-bcc4-f163c9ec0fb2.jpg_compressed"
+                alt="Food Item 4">
+            <pre><b>Pizza</b></pre>
+            <iframe src="https://www.pngitem.com/pimgs/m/151-1515150_veg-icon-png-circle-transparent-png.png" id="yui_3_5_1_1_1733555026393_688" frameborder="0"></iframe>
+
+            <i id="close-buy4" class="fa-solid fa-xmark"></i>
+            <div class="p">Peri peri paneer, onions, green bell peppers, jalapenos, corn, red paprika,
+                 mozzarella cheese, cheddar cheese and our signature marinara sauce made from italian tomatoes.</div>
+            <p>₹100</p>
+            
+
+            <button>proceed</button>
+
+        </div>
+        <div id="Chowmein" class="food5">
+            <img src="https://www.fryingpanadventures.com/wp-content/uploads/2020/10/image-137-scaled-e1604152201367.jpeg"
+                alt="Food Item 5">
+            <pre><b>Chowmein</b></pre>
+            <iframe src="https://www.pngitem.com/pimgs/m/151-1515150_veg-icon-png-circle-transparent-png.png" id="yui_3_5_1_1_1733555026393_688" frameborder="0"></iframe>
+
+            <i id="close-buy5" class="fa-solid fa-xmark"></i>
+            <div class="p">A delectable Chinese-style vegetable stir-fry with noodles, packed with flavors that will transport your taste buds.</div>
+            <p>₹70</p>
+            
+
+            <button>proceed</button>
+
+        </div>
+        <div id="Sammosa" class="food6">
+            <img src="http://www.zedamagazine.com/wp-content/uploads/2018/06/Indian-Food-Samosa-Dish-HD-Wallpapers.jpg"
+                alt="Food Item 6">
+            <pre><b>Sammosa</b></pre>
+            <iframe src="https://www.pngitem.com/pimgs/m/151-1515150_veg-icon-png-circle-transparent-png.png" id="yui_3_5_1_1_1733555026393_688" frameborder="0"></iframe>
+
+            <i id="close-buy6" class="fa-solid fa-xmark"></i>
+            <div class="p">|Dry, Medium Spicy|   A timeless Chai classic (1 piece served).</div>
+            <p>₹30</p>
+            
+
+            <button>proceed</button>
+
+        </div>
+        <div id="Dosa" class="food7">
+            <img src="https://imgmedia.lbb.in/media/2019/06/5cfab213ea70622992f6c4db_1559933459094.jpg"
+                alt="Food Item 7">
+            <pre><b>Dosa</b></pre>
+            <iframe src="https://www.pngitem.com/pimgs/m/151-1515150_veg-icon-png-circle-transparent-png.png" id="yui_3_5_1_1_1733555026393_688" frameborder="0"></iframe>
+
+            <i id="close-buy7" class="fa-solid fa-xmark"></i>
+            <div class="p">A delectable and flavorful South Indian specialty, this dish is a vegetable-filled delight that will tantalize your taste buds.</div>
+            <p>₹60</p>
+            
+
+            <button>proceed</button>
+
+        </div>
+        <div id="Idli" class="food8">
+            <img src="https://www.visittnt.com/blog/wp-content/uploads/2017/09/maxresdefault.jpg"
+                alt="Food Item 8">
+            <pre><b>Idli</b></pre>
+            <iframe src="https://www.pngitem.com/pimgs/m/151-1515150_veg-icon-png-circle-transparent-png.png" id="yui_3_5_1_1_1733555026393_688" frameborder="0"></iframe>
+
+            <i id="close-buy8" class="fa-solid fa-xmark"></i>
+            <div class="p">Delight in the perfect pair of soft and fluffy idlis, complemented by a savory sambar.</div>
+            <p>₹70</p>
+            
+
+            <button>proceed</button>
+
+        </div>
+
+        <div id="Aloopuri" class="food9">
+            <img src="https://foodiewish.com/wp-content/uploads/2020/03/Vegetarian-dishes-foodiewish.jpg"
+                alt="Food Item 9">
+            <pre><b>Aloo Puri</b></pre>
+            <iframe src="https://www.pngitem.com/pimgs/m/151-1515150_veg-icon-png-circle-transparent-png.png" id="yui_3_5_1_1_1733555026393_688" frameborder="0"></iframe>
+
+            <i id="close-buy9" class="fa-solid fa-xmark"></i>
+            <div class="p">Made with aashirvaad atta, fram fresh veggie with desi ghee, green salad, mouth freshener, green chilli chatni, tops mix veg achar.</div>
+            <p>₹50</p>
+            
+
+            <button>proceed</button>
+
+        </div>
+        <div id="Mattarpanner" class="food10">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/FOOD_CATALOG/IMAGES/CMS/2024/9/23/b18db055-365b-4cfc-b3a0-bdc6815b9f83_78199d75-33d1-4194-984c-e0670455c545.jpg"
+                alt="Food Item 10">
+            <pre><b>Chilli Paneer Dry</b></pre>
+            <iframe src="https://www.pngitem.com/pimgs/m/151-1515150_veg-icon-png-circle-transparent-png.png" id="yui_3_5_1_1_1733555026393_688" frameborder="0"></iframe>
+
+            <i id="close-buy10" class="fa-solid fa-xmark"></i>
+            <div class="p">Take your taste buds on a ride with this awesome preparation of diced paneer, young onions, and hot chillies, enhanced with condiments..</div>
+            <p>₹200</p>
+            
+
+            <button>proceed</button>
+
+        </div>
+        <div id="manchurean" class="food11">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/hnkyzajtcaug2o3izbsq"
+                alt="Food Item 11">
+            <pre><b>Manchurian</b></pre>
+            <iframe src="https://www.pngitem.com/pimgs/m/151-1515150_veg-icon-png-circle-transparent-png.png" id="yui_3_5_1_1_1733555026393_688" frameborder="0"></iframe>
+
+            <i id="close-buy11" class="fa-solid fa-xmark"></i>
+            <div class="p"> 8 Chinese Crispy Vegetable Ball Tossed In Black Bean Sauce & Bell Peppers (Note : We Do Not Use MSG in Any of Our Items).</div>
+            <p>₹89</p>
+            
+
+            <button>proceed</button>
+
+        </div>
+        <div id="vegthali" class="food12">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/ddcd030588186f069a08763ee7d4bfca"
+                alt="Food Item 12">
+            <pre><b>Desi Ghee Veg Thali</b></pre>
+            <iframe src="https://www.pngitem.com/pimgs/m/151-1515150_veg-icon-png-circle-transparent-png.png" id="yui_3_5_1_1_1733555026393_688" frameborder="0"></iframe>
+
+            <i id="close-buy12" class="fa-solid fa-xmark"></i>
+            <div class="p">Dal makhni+lababdar paneer/matar paneer+peas basmati rice+2 tawa paratha/4 tawa roti+boondi raita+roasted papad+green salad+special mint chilli chutney+tops mixed veg achar+premium mouth freshne.</div>
+            <p>₹70</p>
+            
+
+            <button>proceed</button>
+
+        </div>
+        <div id="NonVegthali" class="food13">
+            <img src="https://i.ytimg.com/vi/0LDOmjPDBC0/maxresdefault.jpg"
+                alt="Food Item 13">
+            <pre><b>Non-Veg Thali</b></pre>
+            <iframe src="https://www.pngitem.com/pimgs/m/151-1515150_veg-icon-png-circle-transparent-png.png" id="yui_3_5_1_1_1733555026393_688" frameborder="0"></iframe>
+
+            <i id="close-buy13" class="fa-solid fa-xmark"></i>
+            <div class="p">Dal makhni+lababdar paneer/matar paneer+peas basmati rice+2 tawa paratha/4 tawa roti+boondi raita+roasted papad+green salad+special mint chilli chutney+tops mixed veg achar+premium mouth freshne.</div>
+            <p>₹70</p>
+            
+
+            <button>proceed</button>
+
+        </div>
+        <div id="Pastry" class="food14">
+            <img src="https://thenovicechefblog.com/wp-content/uploads/2020/05/Chocolate-Cake-Recipe-8-735x1103.jpeg"
+                alt="Food Item 14">
+            <pre><b>Pastry 4 peices</b></pre>
+            <iframe src="https://www.pngitem.com/pimgs/m/151-1515150_veg-icon-png-circle-transparent-png.png" id="yui_3_5_1_1_1733555026393_688" frameborder="0"></iframe>
+
+            <i id="close-buy14" class="fa-solid fa-xmark"></i>
+            <div class="p">This is a slice of rich, moist chocolate cake layered with creamy chocolate frosting. It is topped with a swirl of frosting and colorful sprinkles, creating a visually delightful and indulgent treat.</div>
+            <p>₹150</p>
+            
+
+            <button>proceed</button>
+
+        </div>
+        <div id="Cake" class="food15">
+            <img src="https://media.gettyimages.com/photos/round-chocolate-cake-isolated-on-white-background-picture-id176853352?b=1&k=6&m=176853352&s=612x612&w=0&h=C8a0DFnXoKI8kjwjSbGamo_yzGtFqzRtI7cdula380E="
+                alt="Food Item 15">
+            <pre><b>Cake</b></pre>
+            <iframe src="https://www.pngitem.com/pimgs/m/151-1515150_veg-icon-png-circle-transparent-png.png" id="yui_3_5_1_1_1733555026393_688" frameborder="0"></iframe>
+
+            <i id="close-buy15" class="fa-solid fa-xmark"></i>
+            <div class="p">This is a classic chocolate cake 300g with a smooth, dark chocolate frosting covering the entire surface. It is decorated with elegant swirls of chocolate frosting around the edges and a centerpiece swirl on top.</div>
+            <p>₹250</p>
+            
+
+            <button>proceed</button>
+
+        </div>
+        <div id="Biryani" class="food16">
+            <img src="https://biryanicorner.com.au/images/right.jpg"
+                alt="Food Item 16">
+            <pre><b>Biryani </b></pre>
+            <iframe src="https://www.pngitem.com/pimgs/m/151-1515150_veg-icon-png-circle-transparent-png.png" id="yui_3_5_1_1_1733555026393_688" frameborder="0"></iframe>
+
+            <i id="close-buy16" class="fa-solid fa-xmark"></i>
+            <div class="p">This is a flavorful chicken biryani with 2 leg peice, featuring tender, spiced chicken drumsticks atop fragrant, long-grain basmati rice. Garnished with fresh herbs.</div>
+            <p>₹100</p>
+            
+
+            <button>proceed</button>
+
+        </div>
+
+
     </section>
+    <!--HEALTH DEPARTMENT  HEALTH DEPARTMENT   HEALTH DEPARTMENT  HEALTH DEPARTMENT  HEALTH DEPARTMENT  HEALTH DEPARTMENT   HEALTH DEPARTMENT  -->
+    <section id="health" class="items">
+        <p>
+        <h2>Health Items</h2>
+        </p>
+        <hr>
+        <div class="item">
+            <img src="https://pureworks.com.my/assets/images/health-care-product-packaging-design-page.jpg"
+                alt="Health Item 1">
+            <pre><b>Organic Protein Powder 875G</b> </pre>
+            <p>₹350</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                
+            </div>
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://dcassetcdn.com/design_img/3842816/947293/24211941/2m5p079hz1mm7p3h0snp0rwry0_image.jpg"
+                alt="Health Item 2">
+            <pre> <b>Medi-tri Hand Sanitizer 236mil</b></pre>
+            <p>₹220</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://site.ambercity.com/images/mabis/caliber-nurse-stethoscope-adult-boxed-black-10-424-020-lr.jpg"
+                alt="Health Item 3">
+            <pre><b>Stethoscope</b></pre>
+            <p>₹450</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://ph-test-11.slatic.net//1b8150e1b41c7c0e94f095229d6e173e.jpg" alt="Health Item 4">
+            <pre><b>Omron Blood pressure machine</b></pre>
+            <p>₹470</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                
+            </div>
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://res.cloudinary.com/walmart-labs/image/upload/w_960,dpr_auto,f_auto,q_auto:best/gr/images/product-images/img_large/00750138549521L.jpg"
+                alt="Health Item 5">
+            <pre>Paracetamol 500mg</pre>
+            <p>₹310</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                
+            </div>
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://www.rxstars.net/wp-content/uploads/2015/03/Amlopres-5-mg-880x320.jpg" alt="Health Item 6">
+            <pre><b>Amlopres-5-mg-880x320</b></pre>
+            <p>₹360</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                
+            </div>
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://5.imimg.com/data5/SELLER/Default/2023/6/313317975/KC/IG/AQ/156133026/thriveco-hair-serum-2-0-1000x1000.jpg"
+                alt="Health Item 7">
+            <pre><b>Hair Growth Serum unisex,30ml</b></pre>
+            <p>₹670</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                
+
+            </div>
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://5.imimg.com/data5/SELLER/Default/2021/6/BV/JP/UY/2529238/honitus-cough-syrup.jpg"
+                alt="Health Item 8">
+            <pre><b>Dabur caugh syrup 100ml</b></pre>
+            <p>₹350</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                
+
+            </div>
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://s3.images-iherb.com/sim/sim50003/y/1.jpg" alt="Health Item 9">
+            <pre><b>cough & fever releif 40 tablet</b></pre>
+            <p>₹350</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                
+            </div>
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://i5.walmartimages.com/asr/00d11b23-b397-494b-972e-0422ce1490d8_1.f66d58d2745038dc057fbcdb6c1983d1.jpeg"
+                alt="Health Item 10">
+            <pre><b>fish oil 1200mg</b></pre>
+            <p>₹500</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                
+            </div>
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://herbabox.co.uk/wp-content/uploads/2020/04/herbalife-aloe-vera-concentrate-juice-max-473ml.jpg"
+                alt="Health Item 11">
+            <pre><b>Herbal Alovera concentrate</b></pre>
+            <p>₹265</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                
+
+            </div>
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
+                </div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="https://i.pinimg.com/originals/bc/ea/76/bcea76d07970b8e03ce93578e5cb443d.jpg"
+                alt="Health Item 12">
+            <pre><b>joint pain,migran sore muscle caplets 500mg</b></pre>
+            <p>₹500</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                
+
+            </div>
+            <div class="product-quantity-button-container">
+                <div>
+                    <input type="number" placeholder="enter Quantity" min="1"> <BUtton>Buy Now</BUtton>
+                </div>
+            </div>
+        </div>
+
+        <!-- More health items here -->
+    </section>
+    <div class="seperation"></div>
     <!--CLOTHS PRODUCT  CLOTHS PRODUCT    CLOTHS PRODUCT   CLOTHS PRODUCT  CLOTHS PRODUCT CLOTHS PRODUCT  CLOTHS PRODUCT  CLOTHS PRODUCT  CLOTHS PRODUCT  CLOTHS PRODUCT  -->
 
-    <section id="clothes">
+    <section id="clothes" class="items">
         <p>
         <h2>Clothing</h2>
         </p>
+
+
+        <div class="item">
+            <img src="https://i.pinimg.com/originals/8c/81/c6/8c81c68409e2456f514825585472dcf7.jpg"
+                alt="Clothing Item 1">
+            <pre><b>navy short sleeve</b></pre>
+            <p>₹389</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                
+            </div>
+            <button>Add to Cart</button> <button  onclick = "openProductDetails()">Buy Now</button>
+        </div>
+        <div class="item">
+            <img src="https://m.media-amazon.com/images/I/510jKNZLyNL._SY879_.jpg"
+                alt="Clothing Item 2">
+            <pre><b>Leriya Fashion Western Dress</b></pre>
+            <p>₹310</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                
+
+            </div>
+            <button>Add to Cart</button><button onclick = "openProductDetails2()">Buy Now</button>
+        </div>
+        <div class="item">
+            <img src="https://rukminim2.flixcart.com/image/416/416/xif0q/t-shirt/c/5/p/xl-cbul-23bds-5be-bullmer-original-imah6nazfpxmkawu.jpeg?q=70&amp;crop=false"
+                alt="Clothing Item 3">
+            <pre><strong>Bullmer</strong><b>cotton half sleve</b></pre>
+            <p>₹786</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                
+            </div>
+            <button>Add to Cart</button><button onclick = "openProductDetails3()">Buy Now</button>
+        </div>
+        <div class="item">
+            <img src="https://m.media-amazon.com/images/I/81RqFEKlsXL._SX679_.jpg"
+                alt="Clothing Item 4">
+            <pre><b>YUV Infant Baby Boys & Girls</b></pre>
+            <p>₹456</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                
+                
+            </div>
+            <button>Add to Cart</button><button onclick = "openProductDetails4()">Buy Now</button>
+        </div>
+        <div class="item">
+            <img src="https://m.media-amazon.com/images/I/51wkqt5lanL._SY879_.jpg"
+                alt="Clothing Item 5">
+            <pre><b>Men Suit - Dress Set </b></pre>
+            <p>₹7000</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                
+            </div>
+            <button>Add to Cart</button><button onclick = "openProductDetails5()">Buy Now</button>
+        </div>
+        <div class="item">
+            <img src="https://images.bewakoof.com/original/men-s-black-half-and-half-relaxed-fit-t-shirt-333637-1655748521-1.jpg"
+                alt="Clothing Item 6">
+            <pre><b>Round neck Half t-shirt</b></pre>
+            <p>₹234</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                
+
+            </div>
+            <button>Add to Cart</button><button onclick = "openProductDetails6()">Buy Now</button>
+        </div>
+        <div class="item">
+            <img src="https://i.pinimg.com/736x/dd/8f/40/dd8f4034ae05bcd8507db5c6bf7ce921.jpg" alt="Clothing Item 7">
+            <pre><b>Shirt-Shorts Set</b></pre>
+            <p>₹2,039</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <button>Add to Cart</button><button onclick = "openProductDetails7()">Buy Now</button>
+        </div>
+        <div class="item">
+            <img src="https://rukminim2.flixcart.com/image/416/416/xif0q/sherwani/3/s/m/m-rj-322-amzira-original-imagxbsmfpek9jjs.jpeg?q=70&amp;crop=false"
+                alt="Clothing Item 8">
+            <pre><b>Sherwani</b></pre>
+            <p>₹1,500</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <button>Add to Cart</button><button onclick = "openProductDetails8()">Buy Now</button>
+        </div>
+        <div class="item">
+            <img src="https://rukminim2.flixcart.com/image/416/416/xif0q/earring/9/6/k/na-bflyc05-exotique-original-imagqdfypgjnrega.jpeg?q=70&amp;crop=false"
+                alt="Clothing Item 9">
+            <pre><b>Butterfly Earrings </b></pre>
+            <p>₹500</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+
+            </div>
+            <button>Add to Cart</button><button onclick = "openProductDetails9()">Buy Now</button>
+        </div>
+        <div class="item">
+            <img src="https://rukminim2.flixcart.com/image/416/416/xif0q/ethnic-set/8/6/x/s-35775-libas-original-imah3wkgahrczrgg.jpeg?q=70&amp;crop=false"
+                alt="Clothing Item 10">
+            <pre><b>Kurta Salwar set</b></pre>
+            <p>₹1000</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                
+                
+            </div>
+            <button>Add to Cart</button><button onclick = "openProductDetails10()">Buy Now</button>
+        </div>
+        <div class="item">
+            <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/sari/z/m/w/free-sc-taj-mahal-silk-3-rama-sarjan-creation-unstitched-original-imaggkpny8srubnn.jpeg?q=70&amp;crop=false" alt="Clothing Item 11">
+            <pre><b>Silk saree</b></pre>
+            <p>₹800</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                
+            </div>
+            <button>Add to Cart</button><button onclick = "openProductDetails11()">Buy Now</button>
+        </div>
+        <div class="item">
+            <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/sari/8/b/o/free-4011s6288-samah-unstitched-original-imah8er75qhhygzf.jpeg?q=70&amp;crop=false"
+                alt="Clothing Item 12">
+            <pre><b>saree</b></pre>
+            <p>₹542</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                
+
+            </div>
+            <button>Add to Cart</button><button onclick = "openProductDetails12()">Buy Now</button>
+        </div>
+        <div class="item">
+            <img src="https://www.stylesgap.com/wp-content/uploads/2014/08/Latest-Indian-Ethnic-Wear-Dresses-Stylish-Suits-Formal-Collection-for-Women-23.jpg"
+                alt="Clothing Item 13">
+
+            <pre><b>stylis suit</b></pre>
+            <p>₹450</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+
+            </div>
+            <button>Add to Cart</button><button>Buy Now</button>
+        </div>
+        <div class="item">
+            <img src="https://i.pinimg.com/originals/cb/4d/0e/cb4d0e1fd2a36b38858f80c626af6f9a.png"
+                alt="Clothing Item 14">
+            <pre><b>Jacket Plazoo</b></pre>
+            <p>₹345</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <button>Add to Cart</button><button>Buy Now</button>
+        </div>
+        <div class="item">
+            <img src="https://www.godfatherstyle.com/wp-content/uploads/2015/12/indian-wedding-dresses.jpg"
+                alt="Clothing Item 15">
+            <pre><b>lehenga</b></pre>
+            <p>₹678</p>
+            <div class="container">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+
+            <button>Add to Cart</button><button>Buy Now</button>
+        </div>
+
+        </div>
+        <hr>
+        <!-- More clothing items here -->
     </section>
-
-    <div class="item">
-        <img src="https://i.pinimg.com/originals/8c/81/c6/8c81c68409e2456f514825585472dcf7.jpg" alt="Clothing Item 1">
-        <pre><b>navy short sleeve</b></pre>
-        <p>₹389</p>
-        <div class="container">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-        </div>
-        <button>Add to Cart</button><button>Buy Now</button>
     </div>
-    <div class="item">
-        <img src="https://ae01.alicdn.com/kf/HTB1UHDdMXXXXXXgXFXXq6xXFXXXt/2017-men-s-Mandarin-Collar-short-sleeve-natural-linen-cotton-summer-shirt-white-sky-blue-front.jpg"
-            alt="Clothing Item 2">
-        <pre><b>mandarin collar short sleeve</b></pre>
-        <p>₹567</p>
-        <div class="container">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star-half-stroke"></i>
-
-        </div>
-        <button>Add to Cart</button><button>Buy Now</button>
-    </div>
-    <div class="item">
-        <img src="https://5.imimg.com/data5/SELLER/Default/2020/10/YL/LY/IK/21534689/img-20201014-wa0007-1000x1000.jpg"
-            alt="Clothing Item 3">
-        <pre><b>cotton half sleve</b></pre>
-        <p>₹786</p>
-        <div class="container">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-        </div>
-        <button>Add to Cart</button><button>Buy Now</button>
-    </div>
-    <div class="item">
-        <img src="https://5.imimg.com/data5/SELLER/Default/2023/1/UP/TT/NP/61447548/men-half-sleeve-round-neck-t-shirt-1000x1000.jpg"
-            alt="Clothing Item 4">
-        <pre><b>cotton half sleve 6 pics</b></pre>
-        <p>₹456</p>
-        <div class="container">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star-half-stroke"></i>
-            <i class="fa-regular fa-star"></i>
-        </div> 
-        <button>Add to Cart</button><button>Buy Now</button>
-    </div>
-    <div class="item">
-        <img src="https://i.pinimg.com/originals/9b/f0/41/9bf041909941c301149da92134be987d.jpg" alt="Clothing Item 5">
-        <pre><b>wedding suit </b></pre>
-        <p>₹567</p>
-        <div class="container">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-        </div>
-        <button>Add to Cart</button><button>Buy Now</button>
-    </div>
-    <div class="item">
-        <img src="https://images.bewakoof.com/original/men-s-black-half-and-half-relaxed-fit-t-shirt-333637-1655748521-1.jpg"
-            alt="Clothing Item 6">
-        <pre><b>Round neck Half t-shirt</b></pre>
-        <p>₹234</p>
-        <div class="container">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star-half-stroke"></i>
-
-        </div>
-        <button>Add to Cart</button><button>Buy Now</button>
-    </div>
-    <div class="item">
-        <img src="https://i.pinimg.com/736x/dd/8f/40/dd8f4034ae05bcd8507db5c6bf7ce921.jpg" alt="Clothing Item 7">
-        <pre><b>printed navy blue night suit</b></pre>
-        <p>₹780</p>
-        <div class="container">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-        </div>
-        <button>Add to Cart</button><button>Buy Now</button>
-    </div>
-    <div class="item">
-        <img src="https://media.list.ly/production/291147/1830749/item1830749_600px.jpeg?ver=7255795432"
-            alt="Clothing Item 8">
-        <pre><b>Dhoti Sherwani</b></pre>
-        <p>₹899</p>
-        <div class="container">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-        </div>
-        <button>Add to Cart</button><button>Buy Now</button>
-    </div>
-    <div class="item">
-        <img src="https://5.imimg.com/data5/LE/RH/KY/SELLER-77335561/men-half-t-shirt-1000x1000.jpg"
-            alt="Clothing Item 8">
-        <pre><b>cotton half sleves </b></pre>
-        <p>₹500</p>
-        <div class="container">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-
-        </div>
-        <button>Add to Cart</button><button>Buy Now</button>
-    </div>
-    <div class="item">
-        <img src="https://1.bp.blogspot.com/-KwtdOqL5PuE/UGtJZrVyTBI/AAAAAAAACco/EzRu3tfuXvg/s1600/Punjabi-Suits-2012-For-Girls.jpg"
-            alt="Clothing Item 8">
-        <pre><b>punjabi suit</b></pre>
-        <p>₹336</p>
-        <div class="container">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-        </div>
-        <button>Add to Cart</button><button>Buy Now</button>
-    </div>
-    <div class="item">
-        <img src="https://i.ytimg.com/vi/zzC_IswH9sw/maxresdefault.jpg" alt="Clothing Item 8">
-        <pre><b>Silk saree</b></pre>
-        <p>₹562</p>
-        <div class="container">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-        </div>
-        <button>Add to Cart</button><button>Buy Now</button>
-    </div>
-    <div class="item">
-        <img src="https://i.pinimg.com/originals/1c/71/6b/1c716bbef67f16d46adefbcfb2c94c19.jpg" alt="Clothing Item 8">
-        <pre><b>saree</b></pre>
-        <p>₹345</p>
-        <div class="container">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star-half-stroke"></i>
-
-        </div>
-        <button>Add to Cart</button><button>Buy Now</button>
-    </div>
-    <div class="item">
-        <img src="https://www.stylesgap.com/wp-content/uploads/2014/08/Latest-Indian-Ethnic-Wear-Dresses-Stylish-Suits-Formal-Collection-for-Women-23.jpg"
-            alt="Clothing Item 8">
-
-        <pre><b>stylis suit</b></pre>
-        <p>₹450</p>
-        <div class="container">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star-half-stroke"></i>
-
-        </div>
-        <button>Add to Cart</button><button>Buy Now</button>
-    </div>
-    <div class="item">
-        <img src="https://i.pinimg.com/originals/cb/4d/0e/cb4d0e1fd2a36b38858f80c626af6f9a.png" alt="Clothing Item 8">
-        <pre><b>Jacket Plazoo</b></pre>
-        <p>₹345</p>
-        <div class="container">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-        </div>
-        <button>Add to Cart</button><button>Buy Now</button>
-    </div>
-    <div class="item">
-        <img src="https://www.godfatherstyle.com/wp-content/uploads/2015/12/indian-wedding-dresses.jpg"
-            alt="Clothing Item 8">
-        <pre><b>lehenga</b></pre>
-        <p>₹678</p> 
-        <div class="container">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-        </div>
-    
-        <button>Add to Cart</button><button>Buy Now</button>
-    </div>
-
-    </div>
-    <hr>
-    <!-- More clothing items here -->
-    </section>
-
     <footer>
+
+
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Food Items</h3>
+                <ul>
+                    <li><a href="#fruits">Fruits/Vegetables</a></li>
+                    <li><a href="#thali">thali</a></li>
+                    <li><a href="#snacks">Snacks</a></li>
+                    <li><a href="#beverages">Beverages</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Health Items</h3>
+                <ul>
+                    <li><a href="#supplements">Supplements</a></li>
+                    <li><a href="#wellness">Wellness Products</a></li>
+                    <li><a href="#fitness">Fitness Equipment</a></li>
+                    <li><a href="#skincare">Skincare</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Clothes Items</h3>
+                <ul>
+                    <li><a href="#menswear">Menswear</a></li>
+                    <li><a href="#womenswear">Womenswear</a></li>
+                    <li><a href="#kidswear">Kidswear</a></li>
+                    <li><a href="#accessories">Accessories</a></li>
+                </ul>
+            </div>
+        </div>
+
         <div class="icons2">
             <pre><b>follow us on</b></pre>
-            
-            <a href="https://www.instagram.com/omsingh_826_?igsh=czYxMTZsY29iMmFm"class="fa-brands fa-facebook"></a>
+
+            <a href="https://www.instagram.com/omsingh_826_?igsh=czYxMTZsY29iMmFm" class="fa-brands fa-facebook"></a>
             <a href="https://www.instagram.com/omsingh_826_?igsh=czYxMTZsY29iMmFm" class="fa-brands fa-instagram"></a>
             <a href="https://www.instagram.com/omsingh_826_?igsh=czYxMTZsY29iMmFm" class="fa-brands fa-twitter"></a>
             <a href="https://www.instagram.com/omsingh_826_?igsh=czYxMTZsY29iMmFm" class="fa-brands fa-youtube"></a>
             <a href="https://wa.me/+918429938214" class="fa-brands fa-whatsapp"></a>
-            <a href="https://www.instagram.com/omsingh_826_?igsh=czYxMTZsY29iMmFm"class="fa-brands fa-snapchat"></a>
+            <a href="https://www.snapchat.com/add/omsingh070707?share_id=Cj18730aKtA&locale=en-IN" class="fa-brands fa-snapchat"></a>
         </div>
-        <div class="help">
-            <Pre1>HELP </Pre1>
-            <pre><a href="tel:+918429938214">Contact us</a></pre>
-            <pre>FAQ</pre>
+        <div class="footer-bottom">
+            &copy; 2024 | <a
+                href="https://www.linkedin.com/in/om-singh-bisen-822972289/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BVTh6J36EQ0KXQJJtiek3Ew%3D%3D">Designed
+                by Om Singh Bisen</a>
         </div>
-
-        <div class="extra">
-            <pre>Term Of Use</pre>
-            <pre>Join our Team</pre>
-            <pre>feedback</pre>
-        </div>
-        <div class="pre">
-            <pre>&copy; 2024 Online Store. All rights reserved.</pre>
-        </div>
-
     </footer>
+
+
+    <script src="ecommercee.js"></script>
 </body>
 
 </html>
